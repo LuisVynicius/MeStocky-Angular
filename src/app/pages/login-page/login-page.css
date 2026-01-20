@@ -1,0 +1,39 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    height: 100vh;
+}
+
+.container_form {
+    display: Flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    width: 370px;
+
+    background-color: #020617;
+
+    border-radius: 12px;
+
+    gap: 15px;
+
+    padding: 20px 0px 20px 0px;
+
+    box-shadow: 0 20px 40px rgba(0,0,0,0.45);
+}
+
+.container_form_title span {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.container_form_inputs {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+
+    width: 300px;
+}

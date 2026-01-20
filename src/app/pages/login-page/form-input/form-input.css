@@ -1,0 +1,37 @@
+.container {
+  display: flex;
+  flex-direction: column;
+}
+
+.container_form {
+    display: flex;
+    flex-direction: column;
+
+    gap: 3px;
+}
+
+.container_form_title a {
+  font-size: 0.75rem;
+  color: #94a3b8;
+  text-decoration: none;
+}
+
+.container_form_input input {
+  padding: 0.6rem;
+
+  border-radius: 6px;
+  border: none;
+
+  background: #1e293b;
+  color: #e5e7eb;
+
+  width: 100%;
+}
+
+.container_form_input input::placeholder {
+  color: #64748b;
+}
+
+.container_form_input input:focus {
+  outline: 2px solid #38bdf8;
+}
