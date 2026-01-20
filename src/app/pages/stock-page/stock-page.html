@@ -1,0 +1,42 @@
+<div class="container">
+
+    <div class="container_background">
+
+        <div class="container_background_informations">
+        
+            <app-informations
+                label="Produtos"
+                value="123"
+            ></app-informations>
+            <app-informations
+                label="Itens em estoque"
+                value="123"
+            ></app-informations>
+            <app-informations
+                label="Estoque crítico"
+                value="123"
+            ></app-informations>
+
+        </div>
+
+        <div class="container_background_options">
+
+            <app-search-bar></app-search-bar>
+
+            <app-button
+                label="Adicionar produto"
+            ></app-button>
+
+        </div>
+
+        <div class="container_background_products">
+
+            @for (item of [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]; track $index) {
+                <app-product></app-product>
+            }
+
+        </div>
+
+    </div>
+
+</div>

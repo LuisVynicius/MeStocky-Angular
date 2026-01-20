@@ -1,9 +1,27 @@
 button {
   background: #38bdf8;
-  border: none;
+  
   padding: 0.6rem;
+  
+  border: none;
   border-radius: 6px;
+  
   font-weight: 600;
+  
   cursor: pointer;
+  
   color: #020617;
+
+  user-select: none;
+}
+
+button:hover {
+  background: #30a8db;
+}
+
+button:active {
+  background: #2787b1;
+
+  position: relative;
+  top: 1px;
 }

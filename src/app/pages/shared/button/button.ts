@@ -8,7 +8,7 @@ import { Component, Input } from '@angular/core';
 })
 export class Button {
   @Input()
-  text: string = "";
+  label: string = "";
   @Input()
   width: string = "";
 }
