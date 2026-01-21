@@ -1,0 +1,39 @@
+<div class="container">
+
+    <div class="container_background">
+
+        <div class="container_background_up">
+
+            <div class="container_background_up_informations">
+
+                <h2>Movimentações de estoque</h2>
+
+                <span>Historico completo de entradas e saídas</span>
+
+            </div>
+
+            <div class="container_background_up_filter">
+                
+                <input type="date">
+
+                <select name="" id="">
+                    <option value="Todos">Todos</option>
+                    <option value="Entrada">Entrada</option>
+                    <option value="Saída">Saída</option>
+                </select>
+
+            </div>
+            
+        </div>
+
+        <div class="container_background_reports">
+
+            @for (item of [1,2, 3, 4, 5]; track $index) {
+                <app-report></app-report>
+            }
+
+        </div>
+
+    </div>
+
+</div>

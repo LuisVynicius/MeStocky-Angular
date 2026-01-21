@@ -1,0 +1,17 @@
+.container_report {
+  padding: 6px 14px;
+  
+  border-radius: 6px;
+  
+  font-weight: bold;
+
+  color: white;
+}
+
+.report-exit {
+  background-color: #c62828;
+}
+
+.report-entry {
+  background-color: #2e7d32;
+}
