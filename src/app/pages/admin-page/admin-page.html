@@ -1,0 +1,24 @@
+<div class="container">
+
+    <div class="container_background">
+
+        <div class="container_background_labels">
+
+            <h2>Usuários do Sistema</h2>
+
+            <span>Gerencie permissões e cargos</span>
+
+        </div>
+
+        <div class="container_background_users">
+
+            @for (item of [1, 2, 3]; track $index) {
+                <app-user-information></app-user-information>
+            }
+
+        </div>
+
+    </div>
+
+</div>
+

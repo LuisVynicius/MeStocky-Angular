@@ -1,0 +1,54 @@
+.container {
+    display: flex;
+    flex-direction: row;
+
+    justify-content: space-between;
+    align-items: center;
+
+    background-color: #020617;
+
+    padding: 3px 15px 3px 15px;
+
+    border-radius: 15px;
+}
+
+.container_informations h2 {
+    color: #adbdd4;
+
+    font-size: 18px;
+}
+
+.container_informations span {
+    color: #94a3b8;
+
+    font-size: 14px;
+}
+
+.container_role {
+    background: #1e293b;
+
+    padding: 5px;
+
+    border-radius: 15px;
+
+    font-weight: bold;
+    font-size: 12px;
+}
+
+.container_setrole > select {
+    background: #1e293b;
+    color: white;
+
+    padding: 5px;
+
+    border-radius: 15px;
+
+    font-weight: bold;
+    font-size: 12px;
+}
+
+.container_buttons {
+    display: flex;
+
+    gap: 8px;
+}
