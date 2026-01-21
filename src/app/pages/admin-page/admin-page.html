@@ -12,8 +12,12 @@
 
         <div class="container_background_users">
 
-            @for (item of [1, 2, 3]; track $index) {
-                <app-user-information></app-user-information>
+            @for (user of users; track $index) {
+                <app-user-information
+                    [title]="user.title"
+                    [email]="user.email"
+                    [role]="user.role"
+                ></app-user-information>
             }
 
         </div>

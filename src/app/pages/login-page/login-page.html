@@ -1,26 +1,3 @@
-<form #meuForm="ngForm" (ngSubmit)="login(meuForm)">
-  <input
-    type="text"
-    name="username"
-    ngModel
-    required
-    placeholder="Usuário"
-  />
-
-  <input
-    type="email"
-    name="email"
-    ngModel
-    required
-    placeholder="Email"
-  />
-
-  <button type="submit" [disabled]="meuForm.invalid">
-    Enviar
-  </button>
-</form>
-
-
 <div class="container">
 
     <form

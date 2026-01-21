@@ -2,14 +2,14 @@
 
     <div class="container_informations">
 
-        <h2>Mevy</h2>
-        <span>mevy@gmail.com</span>
+        <h2>{{title}}</h2>
+        <span>{{email}}</span>
 
     </div>
 
     <div class="container_role">
 
-        <span>Administrador</span>
+        <span>{{role}}</span>
 
     </div>
 
@@ -27,11 +27,14 @@
     <div class="container_buttons">
 
         <app-button
-            label="Salvar"
+            label="Remover"
+            [color]="1"
+            (clicked)="removeProduct()"
         ></app-button>
 
         <app-button
-            label="Remover"
+            label="Salvar"
+            (clicked)="saveProduct()"
         ></app-button>
 
     </div>

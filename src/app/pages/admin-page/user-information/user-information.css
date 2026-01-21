@@ -2,7 +2,6 @@
     display: flex;
     flex-direction: row;
 
-    justify-content: space-between;
     align-items: center;
 
     background-color: #020617;
@@ -10,6 +9,10 @@
     padding: 3px 15px 3px 15px;
 
     border-radius: 15px;
+}
+
+.container_informations {
+    width: 35%;
 }
 
 .container_informations h2 {
@@ -25,6 +28,8 @@
 }
 
 .container_role {
+    text-align: center;
+    
     background: #1e293b;
 
     padding: 5px;
@@ -33,6 +38,12 @@
 
     font-weight: bold;
     font-size: 12px;
+
+    width: 20%;
+}
+
+.container_setrole {
+    width: 20%;
 }
 
 .container_setrole > select {
@@ -49,6 +60,9 @@
 
 .container_buttons {
     display: flex;
+    flex-direction: row-reverse;
 
     gap: 8px;
+    
+    width: 25%;
 }
