@@ -1,0 +1,31 @@
+.container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    justify-content: space-between;
+
+    background-color: #020617;
+
+    padding: 15px 10px 15px 10px;
+
+    user-select: none;
+}
+
+.container_options {
+    display: flex;
+
+    gap: 5px;
+
+    cursor: pointer;
+}
+
+.container_options > a {
+    text-decoration: none;
+    color: #94a3b8;
+}
+
+.container_options > a:active {
+    position: relative;
+    top: 1px;
+}

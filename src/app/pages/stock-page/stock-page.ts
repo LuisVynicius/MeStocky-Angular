@@ -11,7 +11,7 @@ import { SearchBar } from './search-bar/search-bar';
     Button,
     Product,
     SearchBar
-  ],
+],
   templateUrl: './stock-page.html',
   styleUrl: './stock-page.css',
 })
