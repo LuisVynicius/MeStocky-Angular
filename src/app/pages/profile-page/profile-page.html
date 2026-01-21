@@ -10,7 +10,11 @@
 
         </div>
 
-        <form class="container_background_credentials">
+        <form 
+            class="container_background_credentials"
+            #informationsForm="ngForm"
+            (ngSubmit)="saveInformations(informationsForm)"
+        >
 
             <h2>Informações pessoais</h2>
 
@@ -53,7 +57,11 @@
 
         </form>
 
-        <form class="container_background_password">
+        <form
+            class="container_background_password"
+            #credentialsForm="ngForm"
+            (ngSubmit)="saveCredentials(credentialsForm)"
+        >
 
             <h2>Segurança</h2>
 
