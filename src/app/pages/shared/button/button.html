@@ -1,6 +1,12 @@
-<button
-    [style.width]="width"
-    [type]="type"
->
-    {{ label }}
-</button>
+<div class="container">
+
+    <button
+        [style.width]="width"
+        [type]="type"
+        (click)="onClick()"
+        [ngClass]="cssClass"
+    >
+        {{ label }}
+    </button>
+
+</div>

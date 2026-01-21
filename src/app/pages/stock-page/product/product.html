@@ -2,7 +2,7 @@
 
     <div class="container_informations">
 
-        <h2>Produto A</h2>
+        <h2>{{title}}</h2>
         <span>Categoria X</span>
 
     </div>
@@ -23,6 +23,7 @@
 
         <app-button
             label="Editar"
+            (clicked)="toEdit()"
         ></app-button>
 
         <app-button
@@ -31,6 +32,7 @@
 
         <app-button
             label="Remover"
+            [color]="1"
         ></app-button>
 
     </div>

@@ -1,6 +1,4 @@
-button {
-  background: #38bdf8;
-  
+.container > button {
   padding: 0.6rem;
   
   border: none;
@@ -9,8 +7,6 @@ button {
   font-weight: 600;
   
   cursor: pointer;
-  
-  color: #020617;
 
   user-select: none;
 }
@@ -25,3 +21,35 @@ button:active {
   position: relative;
   top: 1px;
 }
+
+.blue {
+  background: #38bdf8;
+  color: #020617;
+}
+
+.blue:hover {
+  background: #30a8db;
+}
+
+.blue:active {
+  background: #2787b1;
+
+  position: relative;
+  top: 1px;
+}
+
+.red {
+  background: #7f1d1d;
+  color: white;
+}
+
+.red:hover {
+  background: #991b1b;
+}
+
+.red:active {
+  background: #b91c1c;
+  position: relative;
+  top: 1px;
+}
+
