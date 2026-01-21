@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { FormInput } from '../shared/form-input/form-input';
 import { Button } from '../shared/button/button';
 import { FormsModule, NgForm } from '@angular/forms';
+import { LoginShape } from '../../shape/loginShape';
 
 @Component({
   selector: 'app-login-page',
@@ -16,6 +17,8 @@ import { FormsModule, NgForm } from '@angular/forms';
 })
 export class LoginPage {
   login(form: NgForm) {
-    console.log(form.value);
+    let login: LoginShape = form.value;
+
+    console.log(login);
   }
 }

@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { UserInformation } from './user-information/user-information';
-import { UserAdminPage } from '../../shape/userShape';
+import { UserAdminShape } from '../../shape/userShape';
 
 @Component({
   selector: 'app-admin-page',
@@ -11,7 +11,7 @@ import { UserAdminPage } from '../../shape/userShape';
   styleUrl: './admin-page.css',
 })
 export class AdminPage {
-  users: UserAdminPage[] = [
+  users: UserAdminShape[] = [
     {
       title: 'Alice Silva',
       email: 'alice.silva@empresa.com',
