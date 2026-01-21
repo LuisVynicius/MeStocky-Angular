@@ -11,4 +11,6 @@ export class Button {
   label: string = "";
   @Input()
   width: string = "";
+  @Input()
+  type: string = "button";
 }

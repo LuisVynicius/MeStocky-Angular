@@ -1,6 +1,33 @@
+<form #meuForm="ngForm" (ngSubmit)="login(meuForm)">
+  <input
+    type="text"
+    name="username"
+    ngModel
+    required
+    placeholder="Usuário"
+  />
+
+  <input
+    type="email"
+    name="email"
+    ngModel
+    required
+    placeholder="Email"
+  />
+
+  <button type="submit" [disabled]="meuForm.invalid">
+    Enviar
+  </button>
+</form>
+
+
 <div class="container">
 
-    <div class="container_form">
+    <form
+        class="container_form"
+        #loginForm="ngForm"
+        (ngSubmit)="login(loginForm)"
+    >
 
         <div class="container_form_title">
 
@@ -12,15 +39,27 @@
 
             <app-form-input
                 title="Usuário"
-                type="text"
-                placeholder="Usuário"
-            ></app-form-input>
+            >
+                <input
+                    type="text"
+                    name="username"
+                    placeholder="Usuário"
+                    ngModel
+                    required
+                >
+            </app-form-input>
 
             <app-form-input
                 title="Senha"
-                type="password"
-                placeholder="Senha"
-            ></app-form-input>
+            >
+                <input
+                    type="password"
+                    name="password"
+                    placeholder="Senha"
+                    ngModel
+                    required
+                >
+            </app-form-input>
 
         </div>
 
@@ -29,10 +68,11 @@
             <app-button
                 label="Login"
                 width="300px"
+                type="submit"
             ></app-button>
 
         </div>
 
-    </div>
+    </form>
 
 </div>

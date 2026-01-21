@@ -10,7 +10,7 @@
 
         </div>
 
-        <div class="container_background_credentials">
+        <form class="container_background_credentials">
 
             <h2>Informações pessoais</h2>
 
@@ -18,15 +18,27 @@
 
                 <app-form-input
                     title="Nome"
-                    type="text"
-                    placeholder="Nome de usuário"
-                ></app-form-input>
+                >
+                    <input
+                        type="text"
+                        name="username"
+                        placeholder="Nome do usuário"
+                        ngModel
+                        required
+                    >
+                </app-form-input>
 
                 <app-form-input
                     title="Email"
-                    type="email"
-                    placeholder="Email do usuário"
-                ></app-form-input>
+                >
+                    <input
+                        type="email"
+                        name="email"
+                        placeholder="Email do usuário"
+                        ngModel
+                        required
+                    >
+                </app-form-input>
 
             </div>
 
@@ -34,13 +46,14 @@
 
                 <app-button
                     label="Salvar alterações"
+                    type="submit"
                 ></app-button>
 
             </div>
 
-        </div>
+        </form>
 
-        <div class="container_background_password">
+        <form class="container_background_password">
 
             <h2>Segurança</h2>
 
@@ -48,15 +61,27 @@
 
                 <app-form-input
                     title="Senha atual"
-                    type="password"
-                    placeholder="Senha atual"
-                ></app-form-input>
+                >
+                    <input
+                        type="password"
+                        name="current_password"
+                        placeholder="Senha atual"
+                        ngModel
+                        required
+                    >
+                </app-form-input>
 
                 <app-form-input
                     title="Nova senha"
-                    type="password"
-                    placeholder="Nova senha"
-                ></app-form-input>
+                >
+                    <input
+                        type="password"
+                        name="new_password"
+                        placeholder="Nova senha"
+                        ngModel
+                        required
+                    >
+                </app-form-input>
 
             </div>
 
@@ -64,11 +89,12 @@
 
                 <app-button
                     label="Atualizar senhas"
+                    type="submit"
                 ></app-button>
 
             </div>
 
-        </div>
+        </form>
 
 
 
