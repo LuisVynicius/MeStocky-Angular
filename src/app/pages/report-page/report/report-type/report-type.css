@@ -1,4 +1,12 @@
+.container {
+  width: 100%;
+}
+
 .container_report {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
   padding: 6px 14px;
   
   border-radius: 6px;
@@ -6,6 +14,8 @@
   font-weight: bold;
 
   color: white;
+
+  width: 80px;
 }
 
 .report-exit {

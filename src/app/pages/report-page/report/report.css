@@ -12,9 +12,33 @@
 }
 
 .container_date {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
     color: #94a3b8;
+
+    width: 20%;
+}
+
+.container_product {
+    display: flex;
+    align-items: center;
+    width: 50%;
+
+}
+
+.container_type {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 15%;
+
 }
 
 .container_quantity {
-    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 15%;
 }
