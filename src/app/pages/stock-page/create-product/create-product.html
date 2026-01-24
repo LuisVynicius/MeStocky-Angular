@@ -1,0 +1,73 @@
+<div class="container">
+
+    <form
+        class="container_form"
+        #InsertForm="ngForm"
+        (ngSubmit)="insert_product(InsertForm)"
+    >
+
+        <div class="container_form_title">
+
+            <span>Adicionar Produto</span>
+
+        </div>
+
+        <div class="container_form_inputs">
+
+            <app-form-input
+                title="Nome do Produto"
+            >
+                <input
+                    type="text"
+                    name="product"
+                    placeholder="Nome do Produto"
+                    ngModel
+                    required
+                >
+            </app-form-input>
+
+            <app-form-input
+                title="Quantidade do Produto"
+            >
+                <input
+                    type="number"
+                    name="quantity"
+                    placeholder="Quantidade do Produto"
+                    ngModel
+                    required
+                >
+            </app-form-input>
+
+            <app-form-input
+                title="Quantidade mínima do Produto"
+            >
+                <input
+                    type="number"
+                    name="min_quantity"
+                    placeholder="Quantidade mínima do Produto"
+                    ngModel
+                    required
+                >
+            </app-form-input>
+
+        </div>
+
+        <div class="container_form_buttons">
+
+            <app-button
+                label="Cancelar"
+                type="button"
+                (clicked)="onClick()"
+                [color]="1"
+            ></app-button>
+
+            <app-button
+                label="Login"
+                type="submit"
+            ></app-button>
+
+        </div>
+
+    </form>
+
+</div>
