@@ -3,3 +3,10 @@ export type ReportShape = {
     product: string,
     quantity: number
 }
+
+export type StockShape = {
+    title: string,
+    category: string,
+    quantity: number,
+    min_quantity: number
+}

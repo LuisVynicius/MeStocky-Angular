@@ -11,5 +11,5 @@ export class Informations {
   label: string = "";
 
   @Input()
-  value: string = "";
+  value: number = 0;
 }

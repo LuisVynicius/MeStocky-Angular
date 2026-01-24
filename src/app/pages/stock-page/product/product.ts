@@ -13,9 +13,14 @@ import { Router } from '@angular/router';
   styleUrl: './product.css',
 })
 export class Product {
-  
   @Input()
   title: string = "";
+  @Input()
+  quantity: number = 0;
+  @Input()
+  min_quantity: number = 0;
+  @Input()
+  category: string = "";
 
   constructor(private router: Router) {
 
@@ -23,5 +28,9 @@ export class Product {
 
   toEdit() {
     this.router.navigate(["/product/".concat(this.title)])
+  }
+
+  get warning(): boolean {
+    return this.quantity < this.min_quantity;
   }
 }

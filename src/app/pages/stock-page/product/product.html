@@ -3,19 +3,21 @@
     <div class="container_informations">
 
         <h2>{{title}}</h2>
-        <span>Categoria X</span>
+        <span>{{category}}</span>
 
     </div>
 
     <div class="container_quantity">
 
-        <span>120 un.</span>
+        <span>{{quantity}} un.</span>
 
     </div>
 
     <div class="container_warning">
 
-        <app-warning></app-warning>
+        @if (warning) {
+            <app-warning></app-warning>
+        }
 
     </div>
 
