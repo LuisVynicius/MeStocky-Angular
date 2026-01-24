@@ -30,9 +30,7 @@
 
             @for (report of reports; track $index) {
                 <app-report
-                    [date]="report.date"
-                    [product]="report.product"
-                    [quantity]="report.quantity"
+                    [report]="report"
                 ></app-report>
             }
 

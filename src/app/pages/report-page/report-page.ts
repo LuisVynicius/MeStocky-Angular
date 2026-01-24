@@ -11,18 +11,78 @@ import { ReportShape } from '../../shape/productShape';
   styleUrl: './report-page.css',
 })
 export class ReportPage {
+  
   reports: ReportShape[] = [
-    { 
-      date: "2026-01-01", product: "Notebook", quantity: 5 },
-    { date: "2026-01-02", product: "Mouse", quantity: -18 },
-    { date: "2026-01-03", product: "Teclado", quantity: 12 },
-    { date: "2026-01-04", product: "Monitor", quantity: 7 },
-    { date: "2026-01-05", product: "Headset", quantity: -9 },
-    { date: "2026-01-06", product: "Webcam", quantity: 4 },
-    { date: "2026-01-07", product: "Cadeira Gamer", quantity: 2 },
-    { date: "2026-01-08", product: "HD Externo", quantity: -6 },
-    { date: "2026-01-09", product: "SSD", quantity: 11 },
-    { date: "2026-01-10", product: "Pen Drive", quantity: 25 }
+    {
+    date: "2026-01-05",
+    product: "Teclado Mecânico",
+    quantity: 10,
+    type: true,
+    reason: "Reposição de estoque"
+  },
+  {
+    date: "2026-01-06",
+    product: "Mouse Gamer",
+    quantity: 5,
+    type: false,
+    reason: "Venda"
+  },
+  {
+    date: "2026-01-07",
+    product: "Monitor 24\"",
+    quantity: 3,
+    type: true,
+    reason: "Compra de fornecedor"
+  },
+  {
+    date: "2026-01-08",
+    product: "Cabo HDMI",
+    quantity: 12,
+    type: false,
+    reason: "Saída para manutenção"
+  },
+  {
+    date: "2026-01-09",
+    product: "Notebook",
+    quantity: 2,
+    type: false,
+    reason: "Venda"
+  },
+  {
+    date: "2026-01-10",
+    product: "Notebook",
+    quantity: 4,
+    type: true,
+    reason: "Devolução de cliente"
+  },
+  {
+    date: "2026-01-11",
+    product: "Headset",
+    quantity: 6,
+    type: true,
+    reason: "Entrada por ajuste de inventário"
+  },
+  {
+    date: "2026-01-12",
+    product: "Headset",
+    quantity: 2,
+    type: false,
+    reason: "Produto com defeito"
+  },
+  {
+    date: "2026-01-13",
+    product: "Mouse Gamer",
+    quantity: 8,
+    type: true,
+    reason: "Reposição de estoque"
+  },
+  {
+    date: "2026-01-14",
+    product: "Teclado Mecânico",
+    quantity: 4,
+    type: false,
+    reason: "Venda"
+  }
   ];
   
 }

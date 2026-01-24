@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { ReportType } from './report-type/report-type';
+import { ReportShape } from '../../../shape/productShape';
 
 @Component({
   selector: 'app-report',
@@ -10,16 +11,14 @@ import { ReportType } from './report-type/report-type';
   styleUrl: './report.css',
 })
 export class Report {
+  
   @Input()
-  date: string = "";
+  report: ReportShape = {
+    reason: "",
+    date: "",
+    product: "",
+    quantity: 0,
+    type: false
+  };
 
-  @Input()
-  product: string = "";
-
-  @Input()
-  quantity: number = 0;
-
-  get report_color(): 0 | 1 {
-    return this.quantity > 0 ? 1 : 0;
-  }
 }

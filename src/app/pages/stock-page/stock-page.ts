@@ -6,6 +6,7 @@ import { SearchBar } from './search-bar/search-bar';
 import { CreateProduct } from './create-product/create-product';
 import { StockShape } from '../../shape/productShape';
 import { StockInformationShape } from '../../shape/InformationShape';
+import { optionsShape } from '../../shape/generics';
 
 @Component({
   selector: 'app-stock-page',
@@ -63,6 +64,24 @@ export class StockPage {
         quantity: 22,
         min_quantity: 12,
     },
+  ];
+
+  categories: optionsShape[] = [
+    {
+      title: "Periféricos"
+    },
+    {
+      title: "Monitores"
+    },
+    {
+      title: "Armazenamento"
+    },
+    {
+      title: "Hardware"
+    },
+    {
+      title: "Áudio"
+    }
   ];
 
   informations: StockInformationShape = {

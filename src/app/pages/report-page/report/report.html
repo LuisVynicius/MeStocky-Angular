@@ -2,27 +2,28 @@
 
     <div class="container_date">
 
-        <span>{{date}}</span>
+        <span>{{report.date}}</span>
 
     </div>
 
     <div class="container_product">
 
-        <span>{{product}}</span>
+        <span>{{report.product}}</span>
 
     </div>
 
     <div class="container_type">
 
         <app-report-type
-            [type]="report_color"
+            [reason]="report.reason"
+            [type]="report.type"
         ></app-report-type>
 
     </div>
 
     <div class="container_quantity">
 
-        <span>{{quantity}}</span>
+        <span>{{report.quantity}}</span>
         
     </div>
 

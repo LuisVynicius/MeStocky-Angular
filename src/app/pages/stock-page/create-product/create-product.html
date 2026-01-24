@@ -50,6 +50,21 @@
                 >
             </app-form-input>
 
+            <app-select-input
+                title="Categoria do Produto"
+            >
+                <select
+                    name="category"
+                    ngModel
+                    required
+                >
+                    @for (option of options; track $index) {
+                        <option [value]="$index + 1">{{option.title}}</option>
+                    }
+                </select>
+                
+            </app-select-input>
+
         </div>
 
         <div class="container_form_buttons">

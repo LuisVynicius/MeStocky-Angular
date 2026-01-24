@@ -1,7 +1,9 @@
 export type ReportShape = {
+    reason: string,
     date: string,
     product: string,
-    quantity: number
+    quantity: number,
+    type: boolean
 }
 
 export type StockShape = {
