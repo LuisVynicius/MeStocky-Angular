@@ -7,7 +7,8 @@ export type ReportShape = {
 }
 
 export type StockShape = {
-    title: string,
+    id: number,
+    name: string,
     category: string,
     quantity: number,
     min_quantity: number

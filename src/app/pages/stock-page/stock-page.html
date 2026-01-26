@@ -32,9 +32,9 @@
 
         <div class="container_background_products">
 
-            @for (product of products; track $index) {
+            @for (product of products; track product.id) {
                 <app-product
-                    [title]="product.title"
+                    [title]="product.name"
                     [category]="product.category"
                     [quantity]="product.quantity"
                     [min_quantity]="product.min_quantity"
