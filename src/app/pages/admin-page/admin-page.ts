@@ -13,52 +13,62 @@ import { UserAdminShape } from '../../shape/userShape';
 export class AdminPage {
   users: UserAdminShape[] = [
     {
-      title: 'Alice Silva',
+      id: 0,
+      username: 'Alice Silva',
       email: 'alice.silva@empresa.com',
       role: 'Administrador'
     },
     {
-      title: 'Bruno Costa',
+      id: 0,
+      username: 'Bruno Costa',
       email: 'bruno.costa@empresa.com',
       role: 'Gerente'
     },
     {
-      title: 'Carla Mendes',
+      id: 0,
+      username: 'Carla Mendes',
       email: 'carla.mendes@empresa.com',
       role: 'Operador'
     },
     {
-      title: 'Daniel Rocha',
+      id: 0,
+      username: 'Daniel Rocha',
       email: 'daniel.rocha@empresa.com',
       role: 'Visualizador'
     },
     {
-      title: 'Eduarda Lima',
+      id: 0,
+      username: 'Eduarda Lima',
       email: 'eduarda.lima@empresa.com',
       role: 'Administrador'
     },
     {
-      title: 'Felipe Araujo',
+      id: 0,
+      username: 'Felipe Araujo',
       email: 'felipe.araujo@empresa.com',
       role: 'Operador'
     },
     {
-      title: 'Gabriela Nunes',
+      id: 0,
+      username: 'Gabriela Nunes',
       email: 'gabriela.nunes@empresa.com',
       role: 'Gerente'
     },
     {
-      title: 'Henrique Alves',
+      id: 0,
+      username: 'Henrique Alves',
       email: 'henrique.alves@empresa.com',
       role: 'Visualizador'
     },
     {
-      title: 'Isabela Freitas',
+      id: 0,
+      username: 'Isabela Freitas',
       email: 'isabela.freitas@empresa.com',
       role: 'Operador'
     },
     {
-      title: 'João Pereira',
+      id: 0,
+      username: 'João Pereira',
       email: 'joao.pereira@empresa.com',
       role: 'Visualizador'
     }

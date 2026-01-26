@@ -10,18 +10,21 @@ import { Button } from '../../shared/button/button';
   styleUrl: './user-information.css',
 })
 export class UserInformation {
+
   @Input()
-  title: string = "";
+  id: number = 0;
+  @Input()
+  username: string = "";
   @Input()
   email: string = "";
   @Input()
   role: string = "";
 
   saveProduct() {
-    console.log("Produto salvo: " + this.title + " " + this.email + " " + this.role);
+    console.log("Produto salvo: " + this.username + " " + this.email + " " + this.role);
   }
 
   removeProduct() {
-    console.log("Produto removido: " + this.title + " " + this.email + " " + this.role);
+    console.log("Produto removido: " + this.username + " " + this.email + " " + this.role);
   }
 }

@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { FormInput } from '../shared/form-input/form-input';
 import { Button } from '../shared/button/button';
 import { FormsModule, NgForm } from '@angular/forms';
-import { LoginShape } from '../../shape/loginShape';
+import { LoginShape } from '../../shape/userShape';
 
 @Component({
   selector: 'app-login-page',

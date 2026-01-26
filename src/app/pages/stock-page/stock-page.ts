@@ -29,19 +29,24 @@ export class StockPage implements OnInit {
 
   categories: optionsShape[] = [
     {
-      title: "Periféricos"
+      id: 0,
+      name: "Periféricos"
     },
     {
-      title: "Monitores"
+      id: 0,
+      name: "Monitores"
     },
     {
-      title: "Armazenamento"
+      id: 0,
+      name: "Armazenamento"
     },
     {
-      title: "Hardware"
+      id: 0,
+      name: "Hardware"
     },
     {
-      title: "Áudio"
+      id: 0,
+      name: "Áudio"
     }
   ];
 
