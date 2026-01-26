@@ -3,6 +3,7 @@ import { FormInput } from '../shared/form-input/form-input';
 import { Button } from '../shared/button/button';
 import { FormsModule, NgForm } from '@angular/forms';
 import { LoginShape } from '../../shape/userShape';
+import { UserService } from '../../services/user-service';
 
 @Component({
   selector: 'app-login-page',
@@ -16,9 +17,21 @@ import { LoginShape } from '../../shape/userShape';
   styleUrl: './login-page.css',
 })
 export class LoginPage {
+
+  constructor(
+    private userService: UserService
+  ) { }
+  
   login(form: NgForm) {
     let login: LoginShape = form.value;
 
-    console.log(login);
+    this.userService.login(login).subscribe({
+      next: (success) => {
+        localStorage.setItem("token", success.token);
+      },
+      error: (err) => {
+        console.error(err);
+      }
+    });
   }
 }
