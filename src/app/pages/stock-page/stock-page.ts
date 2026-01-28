@@ -13,6 +13,7 @@ import { CategoryService } from '../../services/category-service';
 import { EditProduct } from './edit-product/edit-product';
 import { ChangeProduct } from './change-product/change-product';
 import { DeleteProduct } from './delete-product/delete-product';
+import { ReasonService } from '../../services/reason-service';
 
 @Component({
   selector: 'app-stock-page',
@@ -33,6 +34,7 @@ import { DeleteProduct } from './delete-product/delete-product';
 export class StockPage implements OnInit {
   
   products: StockShape[] = [];
+  reasons: OptionsShape[] = [];
   categories: OptionsShape[] = [];
   popup_value: number = 0;
   product_id: number = 0;
@@ -46,6 +48,7 @@ export class StockPage implements OnInit {
   constructor(
     private productService: ProductService,
     private categoryService: CategoryService,
+    private reasonService: ReasonService,
     private cdr: ChangeDetectorRef
   ) { }
 
@@ -67,6 +70,13 @@ export class StockPage implements OnInit {
     this.productService.getInformations().subscribe({
       next: (success) => {
         this.informations = success;
+        this.cdr.markForCheck();
+      }
+    });
+
+    this.reasonService.getAllReasons().subscribe({
+      next: (success) => {
+        this.reasons = success;
         this.cdr.markForCheck();
       }
     });

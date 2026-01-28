@@ -35,7 +35,24 @@
                     required
                 >
                    <option [value]="true">Adicionar</option>
-                   <option [value]="false">Remover</option>
+                   <option value="">Remover</option>
+                </select>
+                
+            </app-select-input>
+
+            <app-select-input
+                title="Motivo da alteração"
+            >
+                <select
+                    name="reason_id"
+                    ngModel
+                    required
+                >
+                
+                    @for (reason of options; track $index) {
+                        <option [value]="reason.id">{{ reason.name }}</option>
+                    }
+
                 </select>
                 
             </app-select-input>

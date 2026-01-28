@@ -18,7 +18,7 @@ export class Report {
     date: "",
     product: "",
     quantity: 0,
-    type: false
+    change_type: false
   };
 
 }

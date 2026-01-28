@@ -3,7 +3,14 @@ export type ReportShape = {
     date: string,
     product: string,
     quantity: number,
-    type: boolean
+    change_type: boolean
+}
+
+export type ProductChangeShape = {
+    id: number,
+    quantity: number,
+    change_type: boolean,
+    reason_id: number
 }
 
 export type StockShape = {

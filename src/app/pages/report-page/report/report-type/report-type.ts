@@ -11,11 +11,12 @@ import { Component, Input } from '@angular/core';
 })
 export class ReportType {
   @Input()
-  type: boolean = false;
+  reason_type: boolean = false;
   @Input()
   reason: string = "";
 
   get cssClass(): string {
-    return this.type ? "report-entry" : "report-exit";
+    console.log(this.reason_type);
+    return this.reason_type ? "report-entry" : "report-exit";
   }
 }
