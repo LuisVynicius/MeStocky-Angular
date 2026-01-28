@@ -1,4 +1,4 @@
-export type optionsShape = {
+export type OptionsShape = {
     id: number,
     name: string
 }

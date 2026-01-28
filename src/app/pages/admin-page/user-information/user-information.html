@@ -13,30 +13,38 @@
 
     </div>
 
-    <div class="container_setrole">
+    @if (id !== 1) {
 
-        <select name="role">
-            <option value="Administrador">Administrador</option>
-            <option value="Gerente">Gerente</option>
-            <option value="Operador">Operador</option>
-            <option value="Visualizador">Visualizador</option>
-        </select>
+        <div class="container_setrole">
 
-    </div>
+            <select name="role">
+                <option value="1">Administrador</option>
+                <option value="2">Gerente</option>
+                <option value="3">Operador</option>
+                <option value="4">Visualizador</option>
+            </select>
 
-    <div class="container_buttons">
+        </div>
 
-        <app-button
-            label="Remover"
-            [color]="1"
-            (clicked)="removeProduct()"
-        ></app-button>
+        <div
+            class="container_buttons"
+        >
 
-        <app-button
-            label="Salvar"
-            (clicked)="saveProduct()"
-        ></app-button>
+            <app-button
+                label="Remover"
+                [color]="1"
+                (clicked)="removeProduct()"
+            ></app-button>
 
-    </div>
+            <app-button
+                label="Salvar"
+                (clicked)="saveProduct()"
+            ></app-button>
+
+        </div>
+
+    }
+
+    
 
 </div>

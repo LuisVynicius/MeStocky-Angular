@@ -13,3 +13,10 @@ export type StockShape = {
     quantity: number,
     min_quantity: number
 }
+
+export type ProductCreateShape = {
+    name: string,
+    quantity: number,
+    min_quantity: number,
+    category_id: number
+}

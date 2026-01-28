@@ -1,5 +1,5 @@
 export type StockInformationShape = {
-    products_quantity: number,
+    quantity: number,
     total: number,
-    alerts: number
+    warnings: number
 }

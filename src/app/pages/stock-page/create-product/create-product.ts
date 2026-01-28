@@ -1,9 +1,12 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { ChangeDetectorRef, Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormInput } from '../../shared/form-input/form-input';
 import { FormsModule, NgForm } from '@angular/forms';
 import { Button } from '../../shared/button/button';
 import { SelectInput } from '../../shared/select-input/select-input';
-import { optionsShape } from '../../../shape/generics';
+import { OptionsShape } from '../../../shape/generics';
+import { ProductService } from '../../../services/product-service';
+import { ProductCreateShape } from '../../../shape/productShape';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-create-product',
@@ -18,17 +21,34 @@ import { optionsShape } from '../../../shape/generics';
 })
 export class CreateProduct {
   @Input()
-  options: optionsShape[] = [];
+  options: OptionsShape[] = [];
 
   @Output()
   clicked = new EventEmitter<void>();
   
-  insert_product(form:NgForm) {
-    console.log(form.value);
-  }
+  constructor(
+    private productService: ProductService,
+    private router: Router,
+    private cdr: ChangeDetectorRef
+  ) { }
 
   onClick() {
-    console.log("emitiu");
     this.clicked.emit();
   }
+
+  insert_product(form:NgForm) {
+    let product: ProductCreateShape = form.value;
+
+    product.category_id = Number(product.category_id);
+
+    this.productService.createProduct(product).subscribe({
+      next: (success) => {
+        window.location.reload();
+      },
+      error: (error) => {
+        console.log("TODO ERROR");
+      }
+    });
+  }
+
 }
