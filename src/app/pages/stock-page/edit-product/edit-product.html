@@ -2,13 +2,13 @@
 
     <form
         class="container_form"
-        #InsertForm="ngForm"
-        (ngSubmit)="insertProduct(InsertForm)"
+        #editForm="ngForm"
+        (ngSubmit)="editProduct(editForm)"
     >
 
         <div class="container_form_title">
 
-            <span>Adicionar Produto</span>
+            <span>Editar Produto</span>
 
         </div>
 
@@ -21,18 +21,6 @@
                     type="text"
                     name="name"
                     placeholder="Nome do Produto"
-                    ngModel
-                    required
-                >
-            </app-form-input>
-
-            <app-form-input
-                title="Quantidade do Produto"
-            >
-                <input
-                    type="number"
-                    name="quantity"
-                    placeholder="Quantidade do Produto"
                     ngModel
                     required
                 >
@@ -77,7 +65,7 @@
             ></app-button>
 
             <app-button
-                label="Criar Produto"
+                label="Atualizar Produto"
                 type="submit"
             ></app-button>
 

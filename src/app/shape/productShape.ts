@@ -20,3 +20,10 @@ export type ProductCreateShape = {
     min_quantity: number,
     category_id: number
 }
+
+export type ProductUpdateShape = {
+    id: number,
+    name: string,
+    min_quantity: number,
+    category_id: number
+}

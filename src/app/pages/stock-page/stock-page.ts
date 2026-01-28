@@ -10,6 +10,7 @@ import { OptionsShape } from '../../shape/generics';
 import { ProductService } from '../../services/product-service';
 import { FormsModule } from '@angular/forms';
 import { CategoryService } from '../../services/category-service';
+import { EditProduct } from './edit-product/edit-product';
 
 @Component({
   selector: 'app-stock-page',
@@ -19,6 +20,7 @@ import { CategoryService } from '../../services/category-service';
     Product,
     SearchBar,
     CreateProduct,
+    EditProduct,
     FormsModule
 ],
   templateUrl: './stock-page.html',
@@ -27,16 +29,15 @@ import { CategoryService } from '../../services/category-service';
 export class StockPage implements OnInit {
   
   products: StockShape[] = [];
-
   categories: OptionsShape[] = [];
+  popup_value: number = 0;
+  product_id: number = 0;
 
   informations: StockInformationShape = {
     quantity: 0,
     total: 0,
     warnings: 0
   };
-
-  create_product_popup: boolean = false;
 
   constructor(
     private productService: ProductService,
@@ -45,7 +46,6 @@ export class StockPage implements OnInit {
   ) { }
 
   ngOnInit(): void {
- 
     this.productService.getAllProducts().subscribe({
       next: (success) => {
         this.products = success;
@@ -63,15 +63,22 @@ export class StockPage implements OnInit {
     this.productService.getInformations().subscribe({
       next: (success) => {
         this.informations = success;
-        console.log(success);
         this.cdr.markForCheck();
       }
     });
-
   }
 
-  create_product() {
-    this.create_product_popup = !this.create_product_popup;
+  popup(value: number) {
+    if (this.popup_value === value) {
+      this.popup_value = 0;
+    } else {
+      this.popup_value = value;
+    }
+  }
+
+  popup_edit(id: number) {
+    this.popup(2);
+    this.product_id = id;
   }
 
 }

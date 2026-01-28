@@ -27,16 +27,14 @@ export class CreateProduct {
   clicked = new EventEmitter<void>();
   
   constructor(
-    private productService: ProductService,
-    private router: Router,
-    private cdr: ChangeDetectorRef
+    private productService: ProductService
   ) { }
 
   onClick() {
     this.clicked.emit();
   }
 
-  insert_product(form:NgForm) {
+  insertProduct(form:NgForm) {
     let product: ProductCreateShape = form.value;
 
     product.category_id = Number(product.category_id);

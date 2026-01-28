@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Button } from '../../shared/button/button';
 import { Warning } from './warning/warning';
 import { Router } from '@angular/router';
@@ -14,6 +14,8 @@ import { Router } from '@angular/router';
 })
 export class Product {
   @Input()
+  id: number = 0;
+  @Input()
   title: string = "";
   @Input()
   quantity: number = 0;
@@ -22,12 +24,13 @@ export class Product {
   @Input()
   category: string = "";
 
-  constructor(private router: Router) {
+  @Output()
+  edit = new EventEmitter<number>();
 
-  }
+  constructor() { }
 
   toEdit() {
-    this.router.navigate(["/product/".concat(this.title)])
+    this.edit.emit(this.id);
   }
 
   get warning(): boolean {
