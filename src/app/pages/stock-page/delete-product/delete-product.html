@@ -1,0 +1,32 @@
+<div class="container">
+
+    <form
+        class="container_form"
+    >
+
+        <div class="container_form_title">
+
+            <span>Remover Produto</span>
+
+        </div>
+
+        <div class="container_form_buttons">
+
+            <app-button
+                label="Cancelar"
+                type="button"
+                (clicked)="onClick()"
+                [color]="1"
+            ></app-button>
+
+            <app-button
+                label="Deletar Produto"
+                type="button"
+                (clicked)="deleteProduct()"
+            ></app-button>
+
+        </div>
+
+    </form>
+
+</div>

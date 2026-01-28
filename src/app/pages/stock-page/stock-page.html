@@ -41,6 +41,7 @@
                     [min_quantity]="product.min_quantity"
                     (edit)="popup_edit($event)"
                     (change)="popup_change($event)"
+                    (delete)="popup_delete($event)"
                 ></app-product>
             }
 
@@ -70,6 +71,7 @@
         <app-edit-product
             [options]="categories"
             [product_id]="product_id"
+            (clicked)="popup(0)"
         ></app-edit-product>
 
     </div>
@@ -82,7 +84,21 @@
 
         <app-change-product
             [product_id]="product_id"
+            (clicked)="popup(0)"
         ></app-change-product>
+
+    </div>
+
+}
+
+@if (popup_value === 4) {
+
+    <div class="popup">
+
+        <app-delete-product
+            [product_id]="product_id"
+            (clicked)="popup(0)"
+        ></app-delete-product>
 
     </div>
 

@@ -22,6 +22,9 @@
 }
 
 .container_form_title {
+    display: flex;
+    justify-content: center;
+    
     font-size: 22px;
     font-weight: bold;
 }

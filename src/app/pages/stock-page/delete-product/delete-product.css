@@ -1,5 +1,5 @@
 .container {
-    width: 500px;
+    width: 300px;
 
     background: #0b1220;
     border-radius: 12px;
@@ -24,16 +24,9 @@
 .container_form_title {
     display: flex;
     justify-content: center;
-    
+
     font-size: 22px;
     font-weight: bold;
-}
-
-.container_form_inputs {
-    display: flex;
-    flex-direction: column;
-
-    gap: 3px;
 }
 
 .container_form_buttons {
