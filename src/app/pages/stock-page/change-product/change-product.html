@@ -1,0 +1,63 @@
+<div class="container">
+
+    <form
+        class="container_form"
+        #changeForm="ngForm"
+        (ngSubmit)="changeProduct(changeForm)"
+    >
+
+        <div class="container_form_title">
+
+            <span>Adicionar/Remover Produto</span>
+
+        </div>
+
+        <div class="container_form_inputs">
+
+            <app-form-input
+                title="Quantidade"
+            >
+                <input
+                    type="number"
+                    name="quantity"
+                    placeholder="Quantidade"
+                    ngModel
+                    required
+                >
+            </app-form-input>
+
+            <app-select-input
+                title="Tipo de alteração"
+            >
+                <select
+                    name="change_type"
+                    ngModel
+                    required
+                >
+                   <option [value]="true">Adicionar</option>
+                   <option [value]="false">Remover</option>
+                </select>
+                
+            </app-select-input>
+
+        </div>
+
+        <div class="container_form_buttons">
+
+            <app-button
+                label="Cancelar"
+                type="button"
+                (clicked)="onClick()"
+                [color]="1"
+            ></app-button>
+
+            <app-button
+                label="Atualizar Produto"
+                type="submit"
+            ></app-button>
+
+        </div>
+
+    </form>
+
+</div>

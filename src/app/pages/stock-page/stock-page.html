@@ -40,6 +40,7 @@
                     [quantity]="product.quantity"
                     [min_quantity]="product.min_quantity"
                     (edit)="popup_edit($event)"
+                    (change)="popup_change($event)"
                 ></app-product>
             }
 
@@ -51,7 +52,7 @@
 
 @if (popup_value === 1) {
 
-    <div class="create_product">
+    <div class="popup">
 
         <app-create-product
             [options]="categories"
@@ -64,11 +65,24 @@
 
 @if (popup_value === 2) {
 
-    <div class="edit_product">
+    <div class="popup">
 
         <app-edit-product
             [options]="categories"
+            [product_id]="product_id"
         ></app-edit-product>
+
+    </div>
+
+}
+
+@if (popup_value === 3) {
+
+    <div class="popup">
+
+        <app-change-product
+            [product_id]="product_id"
+        ></app-change-product>
 
     </div>
 

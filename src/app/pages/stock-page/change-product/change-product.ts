@@ -1,28 +1,25 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { FormInput } from '../../shared/form-input/form-input';
 import { FormsModule, NgForm } from '@angular/forms';
+import { FormInput } from '../../shared/form-input/form-input';
 import { Button } from '../../shared/button/button';
 import { SelectInput } from '../../shared/select-input/select-input';
-import { OptionsShape } from '../../../shape/generics';
 
 @Component({
-  selector: 'app-edit-product',
+  selector: 'app-change-product',
   imports: [
     FormsModule,
     FormInput,
     Button,
     SelectInput
   ],
-  templateUrl: './edit-product.html',
-  styleUrl: './edit-product.css',
+  templateUrl: './change-product.html',
+  styleUrl: './change-product.css',
 })
-export class EditProduct {
+export class ChangeProduct {
 
-  @Input()
-  options: OptionsShape[] = [];
   @Input()
   product_id: number = 0;
-
+  
   @Output()
   clicked = new EventEmitter<void>();
 
@@ -30,8 +27,8 @@ export class EditProduct {
     this.clicked.emit();
   }
 
-  editProduct(form: NgForm) {
-
+  changeProduct(form: NgForm) {
+    
   }
 
 }

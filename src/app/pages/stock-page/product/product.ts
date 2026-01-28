@@ -27,10 +27,17 @@ export class Product {
   @Output()
   edit = new EventEmitter<number>();
 
+  @Output()
+  change = new EventEmitter<number>();
+
   constructor() { }
 
   toEdit() {
     this.edit.emit(this.id);
+  }
+
+  toChange() {
+    this.change.emit(this.id);
   }
 
   get warning(): boolean {

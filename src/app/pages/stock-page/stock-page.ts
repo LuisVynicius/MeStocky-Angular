@@ -11,6 +11,7 @@ import { ProductService } from '../../services/product-service';
 import { FormsModule } from '@angular/forms';
 import { CategoryService } from '../../services/category-service';
 import { EditProduct } from './edit-product/edit-product';
+import { ChangeProduct } from './change-product/change-product';
 
 @Component({
   selector: 'app-stock-page',
@@ -21,6 +22,7 @@ import { EditProduct } from './edit-product/edit-product';
     SearchBar,
     CreateProduct,
     EditProduct,
+    ChangeProduct,
     FormsModule
 ],
   templateUrl: './stock-page.html',
@@ -79,6 +81,11 @@ export class StockPage implements OnInit {
   popup_edit(id: number) {
     this.popup(2);
     this.product_id = id;
+  }
+
+  popup_change(id: number) {
+    this.popup(3);
+    this.product_id = id;  
   }
 
 }
