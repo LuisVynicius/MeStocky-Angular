@@ -4,7 +4,6 @@ import { StockPage } from './pages/stock-page/stock-page';
 import { AdminPage } from './pages/admin-page/admin-page';
 import { ProfilePage } from './pages/profile-page/profile-page';
 import { ReportPage } from './pages/report-page/report-page';
-import { ProductPage } from './pages/product-page/product-page';
 
 export const routes: Routes = [
     {
@@ -31,10 +30,5 @@ export const routes: Routes = [
         path: "report",
         pathMatch: "full",
         component: ReportPage
-    },
-    {
-        path: "product/:product",
-        pathMatch: "full",
-        component: ProductPage
     },
 ];

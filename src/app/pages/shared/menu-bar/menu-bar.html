@@ -2,9 +2,18 @@
 
     <div class="container_options">
 
-        <a [routerLink]="['/stock']">Estoque</a>
-        <a [routerLink]="['/report']">Relatórios</a>
-        <a [routerLink]="['/admin']">Admin</a>
+        @if (logged) {
+
+            <a [routerLink]="['/stock']">Estoque</a>
+            <a [routerLink]="['/report']">Relatórios</a>
+
+            @if (user_role === 1) {
+
+                <a [routerLink]="['/admin']">Admin</a>
+            
+            }
+
+        }
 
     </div>
 
@@ -16,11 +25,15 @@
 
     <div class="container_profile">
 
-        <app-user
-            label="Mevy"
-            role="Administrador"
-            [routerLink]="['/profile']"
-        ></app-user>
+        @if (logged) {
+
+            <app-user
+                [label]="username"
+                [role]="rolename"
+                [routerLink]="['/profile']"
+            ></app-user>
+            
+        }
 
     </div>
 

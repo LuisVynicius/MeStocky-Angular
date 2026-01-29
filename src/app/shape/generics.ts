@@ -4,5 +4,8 @@ export type OptionsShape = {
 }
 
 export type AuthenticationShape = {
-    token: string
+    token: string,
+    role: number,
+    username: string,
+    rolename: string
 }

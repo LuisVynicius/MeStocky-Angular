@@ -18,6 +18,8 @@
     gap: 5px;
 
     cursor: pointer;
+
+    width: 33%;
 }
 
 .container_options > a {
@@ -28,4 +30,18 @@
 .container_options > a:active {
     position: relative;
     top: 1px;
+}
+
+.container_title {
+    display: flex;
+    justify-content: center;
+    
+    width: 33%;
+}
+
+.container_profile {
+    display: flex;
+    flex-direction: row-reverse;
+    
+    width: 34%;
 }
