@@ -5,6 +5,7 @@ import { FormsModule, NgForm } from '@angular/forms';
 import { LoginShape } from '../../shape/userShape';
 import { UserService } from '../../services/user-service';
 import { Router } from '@angular/router';
+import { MenuBar } from '../shared/menu-bar/menu-bar';
 
 @Component({
   selector: 'app-login-page',
@@ -12,7 +13,8 @@ import { Router } from '@angular/router';
   imports: [
     FormInput,
     Button,
-    FormsModule
+    FormsModule,
+    MenuBar
   ],
   templateUrl: './login-page.html',
   styleUrl: './login-page.css',

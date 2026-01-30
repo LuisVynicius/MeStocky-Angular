@@ -2,11 +2,13 @@ import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { Report } from './report/report';
 import { ReportShape } from '../../shape/productShape';
 import { ReportService } from '../../services/report-service';
+import { MenuBar } from '../shared/menu-bar/menu-bar';
 
 @Component({
   selector: 'app-report-page',
   imports: [
-    Report
+    Report,
+    MenuBar
   ],
   templateUrl: './report-page.html',
   styleUrl: './report-page.css',

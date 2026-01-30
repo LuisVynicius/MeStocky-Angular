@@ -31,4 +31,8 @@ export const routes: Routes = [
         pathMatch: "full",
         component: ReportPage
     },
+    {
+        path: "**",
+        redirectTo: "/login"
+    }
 ];

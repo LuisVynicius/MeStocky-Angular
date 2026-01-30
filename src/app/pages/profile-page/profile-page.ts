@@ -3,13 +3,15 @@ import { FormInput } from '../shared/form-input/form-input';
 import { Button } from '../shared/button/button';
 import { FormsModule, NgForm } from '@angular/forms';
 import { UserService } from '../../services/user-service';
+import { MenuBar } from '../shared/menu-bar/menu-bar';
 
 @Component({
   selector: 'app-profile-page',
   imports: [
     FormsModule,
     FormInput,
-    Button
+    Button,
+    MenuBar
   ],
   templateUrl: './profile-page.html',
   styleUrl: './profile-page.css',

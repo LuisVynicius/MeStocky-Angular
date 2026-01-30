@@ -7,7 +7,7 @@
             <a [routerLink]="['/stock']">Estoque</a>
             <a [routerLink]="['/report']">Relatórios</a>
 
-            @if (user_role === 1) {
+            @if (user_role < 3) {
 
                 <a [routerLink]="['/admin']">Admin</a>
             
