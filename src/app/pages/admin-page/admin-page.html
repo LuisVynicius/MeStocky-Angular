@@ -16,16 +16,74 @@
 
         </div>
 
+        <div class="container_background_categories">
+
+            <div class="container_background_categories_top">
+
+                <div class="container_background_categories_top_label">
+
+                    <h2>Categorias</h2>
+
+                </div>
+
+                <div class="container_background_categories_top_button">
+
+                    <app-button
+                        label="Adicionar"
+                        (clicked)="popup(1)"
+                    ></app-button>
+
+                </div>
+
+            </div>
+
+            <div class="container_background_categories_itens">
+
+                @for (category of categories; track category.id) {
+                    <app-category-informations
+                        [id]="category.id"
+                        [name]="category.name"
+                        [quantity]="category.quantity"
+                    ></app-category-informations>
+                }
+
+            </div>
+
+        </div>
+
         <div class="container_background_users">
 
-            @for (user of users; track $index) {
-                <app-user-information
-                    [id]="user.id"
-                    [username]="user.username"
-                    [email]="user.email"
-                    [role]="user.role"
-                ></app-user-information>
-            }
+            <div class="container_background_users_top">
+
+                <div class="container_background_users_top_label">
+
+                    <h2>Usuários</h2>
+
+                </div>
+
+                <div class="container_background_users_top_button">
+
+                    <app-button
+                        label="Adicionar"
+                        (clicked)="popup(1)"
+                    ></app-button>
+
+                </div>   
+
+            </div>
+
+            <div class="container_background_users_itens">
+
+                @for (user of users; track $index) {
+                    <app-user-information
+                        [id]="user.id"
+                        [username]="user.username"
+                        [email]="user.email"
+                        [role]="user.role"
+                    ></app-user-information>
+                }
+
+            </div>
 
         </div>
 
@@ -33,3 +91,14 @@
 
 </div>
 
+@if (popup_value === 1) {
+
+    <div class="popup">
+
+        <app-create-category
+            (clicked)="popup(0)"
+        ></app-create-category>
+
+    </div>
+
+}

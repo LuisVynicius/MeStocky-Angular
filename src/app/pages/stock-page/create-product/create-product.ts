@@ -6,7 +6,6 @@ import { SelectInput } from '../../shared/select-input/select-input';
 import { OptionsShape } from '../../../shape/generics';
 import { ProductService } from '../../../services/product-service';
 import { ProductCreateShape } from '../../../shape/productShape';
-import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-create-product',

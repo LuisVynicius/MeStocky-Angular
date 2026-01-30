@@ -1,0 +1,49 @@
+<div class="container">
+
+    <form
+        class="container_form"
+        #InsertForm="ngForm"
+        (ngSubmit)="insertCategory(InsertForm)"
+    >
+
+        <div class="container_form_title">
+
+            <span>Adicionar Categoria</span>
+
+        </div>
+
+        <div class="container_form_inputs">
+
+            <app-form-input
+                title="Nome da Categoria"
+            >
+                <input
+                    type="text"
+                    name="name"
+                    placeholder="Nome da Categoria"
+                    ngModel
+                    required
+                >
+            </app-form-input>
+
+        </div>
+
+        <div class="container_form_buttons">
+
+            <app-button
+                label="Cancelar"
+                type="button"
+                (clicked)="onClick()"
+                [color]="1"
+            ></app-button>
+
+            <app-button
+                label="Criar categoria"
+                type="submit"
+            ></app-button>
+
+        </div>
+
+    </form>
+
+</div>

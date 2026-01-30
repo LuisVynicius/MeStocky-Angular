@@ -1,0 +1,32 @@
+<div class="container">
+
+    <div class="container_label">
+
+        <h2>{{name}}</h2>
+
+    </div>
+
+    <div class="container_quantity">
+
+        <span>{{quantity}}</span>
+
+    </div>
+
+    <div
+        class="container_buttons"
+    >
+
+        <app-button
+            label="Remover"
+            [color]="1"
+            (clicked)="a()"
+        ></app-button>
+
+        <app-button
+            label="Editar"
+            (clicked)="a()"
+        ></app-button>
+
+    </div>
+
+</div>
