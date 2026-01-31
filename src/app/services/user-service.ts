@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { LoginShape, UserAdminShape, UserCredentialsShape } from '../shape/userShape';
+import { LoginShape, TokenShape, UserAdminShape, UserCredentialsShape, ValidTokenShape } from '../shape/userShape';
 import { HttpClient } from '@angular/common/http';
 import { apiURL } from '../configs/environment';
 import { AuthenticationShape } from '../shape/generics';

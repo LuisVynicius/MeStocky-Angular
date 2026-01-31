@@ -3,6 +3,14 @@ export type LoginShape = {
     password: string
 }
 
+export type TokenShape = {
+    token: string
+}
+
+export type ValidTokenShape = {
+    valided: boolean
+}
+
 export type UserAdminShape = {
     id: number, 
     username: string,
