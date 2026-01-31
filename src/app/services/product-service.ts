@@ -1,7 +1,7 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { ProductCreateShape, StockShape } from '../shape/productShape';
+import { ProductCreateShape, ProductUpdateShape, StockShape } from '../shape/productShape';
 import { apiURL } from '../configs/environment';
 import { getHeaderToken } from './get_headers';
 import { StockInformationShape } from '../shape/InformationShape';
@@ -28,6 +28,14 @@ export class ProductService {
     const headers = getHeaderToken();
 
     return this.http.post<void>(apiURL + "/product", product, { headers} );
+
+  }
+
+  updateProduct(product: ProductUpdateShape): Observable<void> {
+
+    const headers = getHeaderToken();
+
+    return this.http.put<void>(apiURL + "/product", product, { headers })
 
   }
 

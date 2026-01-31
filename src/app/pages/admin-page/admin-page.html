@@ -44,6 +44,7 @@
                         [id]="category.id"
                         [name]="category.name"
                         [quantity]="category.quantity"
+                        (edit)="popup_edit($event)"
                     ></app-category-informations>
                 }
 
@@ -65,7 +66,7 @@
 
                     <app-button
                         label="Adicionar"
-                        (clicked)="popup(1)"
+                        (clicked)="popup(4)"
                     ></app-button>
 
                 </div>   
@@ -98,6 +99,31 @@
         <app-create-category
             (clicked)="popup(0)"
         ></app-create-category>
+
+    </div>
+
+}
+
+@if (popup_value === 2) {
+
+    <div class="popup">
+
+        <app-edit-category
+            [category_id]="category_id"
+            (clicked)="popup(0)"
+        ></app-edit-category>
+
+    </div>
+
+}
+
+@if (popup_value === 4) {
+
+    <div class="popup">
+
+        <app-create-user
+            (clicked)="popup(0)"
+        ></app-create-user>
 
     </div>
 

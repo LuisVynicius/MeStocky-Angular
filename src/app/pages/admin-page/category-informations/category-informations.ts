@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Button } from '../../shared/button/button';
 
 @Component({
@@ -17,7 +17,27 @@ export class CategoryInformations {
   @Input()
   quantity: number = 0;
 
-  a() {
+  @Output()
+  edit = new EventEmitter<number>();
 
+  @Output()
+  change = new EventEmitter<number>();
+
+  @Output()
+  delete = new EventEmitter<number>();
+
+  constructor() { }
+
+  toEdit() {
+    this.edit.emit(this.id);
   }
+
+  toChange() {
+    this.change.emit(this.id);
+  }
+
+  toDelete() {
+    this.delete.emit(this.id);
+  }
+
 }

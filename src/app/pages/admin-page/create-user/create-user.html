@@ -1,0 +1,89 @@
+<div class="container">
+
+    <form
+        class="container_form"
+        #InsertForm="ngForm"
+        (ngSubmit)="insertUser(InsertForm)"
+    >
+
+        <div class="container_form_title">
+
+            <span>Adicionar Usuário</span>
+
+        </div>
+
+        <div class="container_form_inputs">
+
+            <app-form-input
+                title="Nome do usuário"
+            >
+                <input
+                    type="text"
+                    name="username"
+                    placeholder="Nome do Usuário"
+                    ngModel
+                    required
+                >
+            </app-form-input>
+
+            <app-form-input
+                title="Email do usuário"
+            >
+                <input
+                    type="email"
+                    name="email"
+                    placeholder="Email do Usuário"
+                    ngModel
+                    required
+                >
+            </app-form-input>
+
+            <app-form-input
+                title="Nome do usuário"
+            >
+                <input
+                    type="password"
+                    name="password"
+                    placeholder="Senha do Usuário"
+                    ngModel
+                    required
+                >
+            </app-form-input>
+
+            <app-select-input
+                title="Cargo do usuário"
+            >
+                
+                <select
+                    name="role"
+                    ngModel
+                    required
+                >
+                    <option value="2">Gerente</option>
+                    <option value="3">Operador</option>
+                    <option value="4">Visualizador</option>
+                </select>
+
+            </app-select-input>
+
+        </div>
+
+        <div class="container_form_buttons">
+
+            <app-button
+                label="Cancelar"
+                type="button"
+                (clicked)="onClick()"
+                [color]="1"
+            ></app-button>
+
+            <app-button
+                label="Criar usuário"
+                type="submit"
+            ></app-button>
+
+        </div>
+
+    </form>
+
+</div>

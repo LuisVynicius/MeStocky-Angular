@@ -7,3 +7,8 @@ export type CategoryShape = {
 export type CategoryCreateShape = {
     name: string
 }
+
+export type CategoryUpdateShape = {
+    id: number,
+    name: string
+}

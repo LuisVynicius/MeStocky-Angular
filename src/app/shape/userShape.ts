@@ -27,3 +27,10 @@ export type UserPasswordShape = {
     old_password: string,
     new_password: string
 }
+
+export type UserCreateShape = {
+    username: string,
+    password: string,
+    email: string,
+    role: number,
+}

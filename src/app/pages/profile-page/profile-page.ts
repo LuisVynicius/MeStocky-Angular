@@ -4,6 +4,7 @@ import { Button } from '../shared/button/button';
 import { FormsModule, NgForm } from '@angular/forms';
 import { UserService } from '../../services/user-service';
 import { MenuBar } from '../shared/menu-bar/menu-bar';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-profile-page',
@@ -19,7 +20,8 @@ import { MenuBar } from '../shared/menu-bar/menu-bar';
 export class ProfilePage {
   
   constructor(
-    private userService: UserService
+    private userService: UserService,
+    private router: Router
   ) { }
 
   updateInformations(form: NgForm) {
@@ -27,7 +29,8 @@ export class ProfilePage {
 
     this.userService.updateUserInformations(user).subscribe({
       next: (success) => {
-        alert("Nome e email atualizados");
+        localStorage.clear();
+        this.router.navigate(["/login"]);
       }
     })
   }
