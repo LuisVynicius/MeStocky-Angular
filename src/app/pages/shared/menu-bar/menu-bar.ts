@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { RouterLink, RouterModule } from "@angular/router";
+import { Router, RouterLink, RouterModule } from "@angular/router";
 import { User } from './user/user';
 
 @Component({
@@ -18,6 +18,10 @@ export class MenuBar implements OnInit {
   username: string = "";
   rolename: string = "";
 
+  constructor(
+    private router: Router
+  ) { }
+
   ngOnInit(): void {
 
     this.logged = localStorage.getItem("token") !== null;
@@ -25,6 +29,11 @@ export class MenuBar implements OnInit {
     this.username = localStorage.getItem("username") || "";
     this.rolename = localStorage.getItem("rolename") || "";
 
+  }
+
+  logout() {
+    localStorage.clear();
+    this.router.navigate(["/login"]);
   }
 
 }

@@ -16,7 +16,7 @@
 .container_options {
     display: flex;
 
-    gap: 5px;
+    gap: 10px;
 
     cursor: pointer;
 
@@ -45,4 +45,25 @@
     flex-direction: row-reverse;
     
     width: 34%;
+}
+
+.container_profile_content {
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+}
+
+.container_profile_content > span {
+    color: #9fa3b8;
+
+    font-size: 12px;
+
+    cursor: pointer;
+}
+
+.container_profile_content > span:active {
+    position: relative;
+    top: 1px
 }

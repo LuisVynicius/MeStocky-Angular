@@ -21,6 +21,14 @@ export class UserService {
 
   }
 
+  validToken(): Observable<void> {
+  
+    const headers = getHeaderToken();
+
+    return this.http.get<void>(apiURL + "/login/valid", { headers });
+
+  }
+
   getAllUsersForAdmin(): Observable<UserAdminShape[]> {
 
     const headers = getHeaderToken();

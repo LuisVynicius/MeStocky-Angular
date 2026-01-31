@@ -27,11 +27,17 @@
 
         @if (logged) {
 
-            <app-user
-                [label]="username"
-                [role]="rolename"
-                [routerLink]="['/profile']"
-            ></app-user>
+            <div class="container_profile_content">
+
+                <app-user
+                    [label]="username"
+                    [role]="rolename"
+                    [routerLink]="['/profile']"
+                ></app-user>
+
+                <span (click)="logout()">Desconectar</span>
+
+            </div>
             
         }
 
