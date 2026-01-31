@@ -41,7 +41,7 @@ export class UserService {
 
     const headers = getHeaderToken();
 
-    return this.http.put<void>(apiURL + "/user", user, { headers });
+    return this.http.put<void>(apiURL + "/user/informations", user, { headers });
 
   }
 
