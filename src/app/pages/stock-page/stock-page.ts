@@ -40,6 +40,7 @@ export class StockPage implements OnInit {
   categories: OptionsShape[] = [];
   popup_value: number = 0;
   product_id: number = 0;
+  user_role: number = 0;
 
   informations: StockInformationShape = {
     quantity: 0,
@@ -82,6 +83,9 @@ export class StockPage implements OnInit {
         this.cdr.markForCheck();
       }
     });
+
+    this.user_role = Number(localStorage.getItem("user_role"));
+
   }
 
   popup(value: number) {

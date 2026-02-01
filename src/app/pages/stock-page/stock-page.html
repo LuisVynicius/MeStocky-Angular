@@ -29,10 +29,14 @@
 
             <app-search-bar></app-search-bar>
 
-            <app-button
-                label="Adicionar produto"
-                (clicked)="popup(1)"
-            ></app-button>
+            @if (user_role < 4) {
+
+                <app-button
+                    label="Adicionar produto"
+                    (clicked)="popup(1)"
+                ></app-button>
+
+            }
 
         </div>
 
@@ -45,6 +49,7 @@
                     [category]="product.category"
                     [quantity]="product.quantity"
                     [min_quantity]="product.min_quantity"
+                    [user_role]="user_role"
                     (edit)="popup(2); product_id = $event"
                     (change)="popup(3); product_id = $event"
                     (delete)="popup(4); product_id = $event"

@@ -23,21 +23,25 @@
 
     <div class="container_options">
 
-        <app-button
-            label="Editar"
-            (clicked)="toEdit()"
-        ></app-button>
+        @if (user_role < 3) {
 
-        <app-button
-            label="+ / -"
-            (clicked)="toChange()"
-        ></app-button>
+            <app-button
+                label="Editar"
+                (clicked)="toEdit()"
+            ></app-button>
 
-        <app-button
-            label="Remover"
-            (clicked)="toDelete()"
-            [color]="1"
-        ></app-button>
+            <app-button
+                label="+ / -"
+                (clicked)="toChange()"
+            ></app-button>
+
+            <app-button
+                label="Remover"
+                (clicked)="toDelete()"
+                [color]="1"
+            ></app-button>
+
+        }
 
     </div>
 
