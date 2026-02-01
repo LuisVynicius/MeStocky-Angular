@@ -9,42 +9,28 @@
 
     <div class="container_role">
 
-        <span>{{role}}</span>
+        <div class="container_role_label">
 
-    </div>
-
-    @if (id !== 1) {
-
-        <div class="container_setrole">
-
-            <select name="role">
-                <option value="1">Administrador</option>
-                <option value="2">Gerente</option>
-                <option value="3">Operador</option>
-                <option value="4">Visualizador</option>
-            </select>
+            <span>{{role}}</span>
 
         </div>
 
-        <div
-            class="container_buttons"
-        >
+    </div>
+
+    <div
+        class="container_buttons"
+    >
+
+        @if (id !== 1) {
 
             <app-button
                 label="Remover"
                 [color]="1"
-                (clicked)="removeProduct()"
+                (clicked)="removeUser()"
             ></app-button>
 
-            <app-button
-                label="Salvar"
-                (clicked)="saveProduct()"
-            ></app-button>
+        }
 
-        </div>
-
-    }
-
-    
+    </div>
 
 </div>

@@ -45,6 +45,7 @@
                         [name]="category.name"
                         [quantity]="category.quantity"
                         (edit)="popup_edit($event)"
+                        (delete)="popup_delete($event)"
                     ></app-category-informations>
                 }
 
@@ -112,6 +113,19 @@
             [category_id]="category_id"
             (clicked)="popup(0)"
         ></app-edit-category>
+
+    </div>
+
+}
+
+@if (popup_value === 3) {
+
+    <div class="popup">
+
+        <app-delete-category
+            [category_id]="category_id"
+            (clicked)="popup(0)"
+        ></app-delete-category>
 
     </div>
 

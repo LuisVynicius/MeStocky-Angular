@@ -44,7 +44,15 @@ export class CategoryService {
 
     const headers = getHeaderToken();
 
-    return this.http.put<void>(apiURL + "/category", category, { headers })
+    return this.http.put<void>(apiURL + "/category", category, { headers });
+
+  }
+
+  deleteCategory(id: number): Observable<void> {
+
+    const headers = getHeaderToken();
+
+    return this.http.delete<void>(apiURL + "/category/" + id, { headers });
 
   }
 

@@ -20,11 +20,11 @@ export class UserInformation {
   @Input()
   role: string = "";
 
-  saveProduct() {
-    console.log("Produto salvo: " + this.username + " " + this.email + " " + this.role);
+  updateUserRole() {
+    console.log("Usuário salvo: " + this.username + " " + this.email + " " + this.role);
   }
 
-  removeProduct() {
-    console.log("Produto removido: " + this.username + " " + this.email + " " + this.role);
+  removeUser() {
+    console.log("Usuário removido: " + this.username + " " + this.email + " " + this.role);
   }
 }

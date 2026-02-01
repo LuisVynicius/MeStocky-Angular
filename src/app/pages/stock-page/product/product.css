@@ -17,7 +17,7 @@
     display: flex;
     flex-direction: column;
 
-    width: 25%;
+    width: 40%;
 }
 
 .container_informations h2 {
@@ -30,14 +30,20 @@
 }
 
 .container_quantity {
+    display: flex;
+    justify-content: center;
+
     font-weight: bold;
     font-size: 15px;
 
-    width: 25%;
+    width: 20%;
 }
 
 .container_warning {
-    width: 25%;
+    display: flex;
+    justify-content: center;
+
+    width: 12%;
 }
 
 .container_options {
@@ -47,5 +53,5 @@
 
     gap: 5px;
 
-    width: 25%;
+    width: 28%;
 }

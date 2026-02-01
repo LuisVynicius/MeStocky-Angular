@@ -10,6 +10,7 @@ import { Button } from '../shared/button/button';
 import { CreateCategory } from './create-category/create-category';
 import { EditCategory } from './edit-category/edit-category';
 import { CreateUser } from './create-user/create-user';
+import { DeleteCategory } from './delete-category/delete-category';
 
 @Component({
   selector: 'app-admin-page',
@@ -20,6 +21,7 @@ import { CreateUser } from './create-user/create-user';
     Button,
     CreateCategory,
     EditCategory,
+    DeleteCategory,
     CreateUser
   ],
   templateUrl: './admin-page.html',

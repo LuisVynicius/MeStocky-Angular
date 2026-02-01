@@ -12,7 +12,7 @@
 }
 
 .container_informations {
-    width: 35%;
+    width: 34%;
 }
 
 .container_informations h2 {
@@ -28,32 +28,21 @@
 }
 
 .container_role {
+    display: flex;
+    justify-content: center;
+
+    width: 46%;
+}
+
+.container_role_label {
+    width: 50%;
+    background: #1e293b;
+    
+    padding: 5px;
+    border-radius: 15px;
+    
     text-align: center;
     
-    background: #1e293b;
-
-    padding: 5px;
-
-    border-radius: 15px;
-
-    font-weight: bold;
-    font-size: 12px;
-
-    width: 20%;
-}
-
-.container_setrole {
-    width: 20%;
-}
-
-.container_setrole > select {
-    background: #1e293b;
-    color: white;
-
-    padding: 5px;
-
-    border-radius: 15px;
-
     font-weight: bold;
     font-size: 12px;
 }
@@ -64,5 +53,5 @@
 
     gap: 8px;
     
-    width: 25%;
+    width: 20%;
 }
