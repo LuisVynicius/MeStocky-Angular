@@ -53,4 +53,12 @@ export class UserService {
 
   }
 
+  deleteUser(id: number): Observable<void> {
+    
+    const headers = getHeaderToken();
+
+    return this.http.delete<void>(apiURL + "/user/" + id, { headers })
+
+  }
+
 }

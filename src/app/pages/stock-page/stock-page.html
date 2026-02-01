@@ -45,9 +45,9 @@
                     [category]="product.category"
                     [quantity]="product.quantity"
                     [min_quantity]="product.min_quantity"
-                    (edit)="popup_edit($event)"
-                    (change)="popup_change($event)"
-                    (delete)="popup_delete($event)"
+                    (edit)="popup(2); product_id = $event"
+                    (change)="popup(3); product_id = $event"
+                    (delete)="popup(4); product_id = $event"
                 ></app-product>
             }
 

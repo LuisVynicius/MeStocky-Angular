@@ -11,6 +11,7 @@ import { CreateCategory } from './create-category/create-category';
 import { EditCategory } from './edit-category/edit-category';
 import { CreateUser } from './create-user/create-user';
 import { DeleteCategory } from './delete-category/delete-category';
+import { DeleteUser } from './delete-user/delete-user';
 
 @Component({
   selector: 'app-admin-page',
@@ -22,7 +23,8 @@ import { DeleteCategory } from './delete-category/delete-category';
     CreateCategory,
     EditCategory,
     DeleteCategory,
-    CreateUser
+    CreateUser,
+    DeleteUser
   ],
   templateUrl: './admin-page.html',
   styleUrl: './admin-page.css',
@@ -33,6 +35,7 @@ export class AdminPage implements OnInit {
 
   popup_value: number = 0;
   category_id: number = 0;
+  user_id: number = 0;
 
   constructor(
     private userService: UserService,
@@ -64,16 +67,6 @@ export class AdminPage implements OnInit {
     } else {
       this.popup_value = value;
     }
-  }
-
-  popup_edit(id: number) {
-    this.popup(2);
-    this.category_id = id;
-  }
-
-  popup_delete(id: number) {
-    this.popup(3);
-    this.category_id = id;  
   }
 
 }

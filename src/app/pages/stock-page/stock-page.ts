@@ -92,19 +92,4 @@ export class StockPage implements OnInit {
     }
   }
 
-  popup_edit(id: number) {
-    this.popup(2);
-    this.product_id = id;
-  }
-
-  popup_change(id: number) {
-    this.popup(3);
-    this.product_id = id;  
-  }
-
-  popup_delete(id: number) {
-    this.popup(4);
-    this.product_id = id;  
-  }
-
 }

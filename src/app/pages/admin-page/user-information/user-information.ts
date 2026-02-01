@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Button } from '../../shared/button/button';
 
 @Component({
@@ -20,11 +20,13 @@ export class UserInformation {
   @Input()
   role: string = "";
 
-  updateUserRole() {
-    console.log("Usuário salvo: " + this.username + " " + this.email + " " + this.role);
+  @Output()
+  delete = new EventEmitter<number>();
+
+  constructor() { }
+
+  toDelete() {
+    this.delete.emit(this.id);
   }
 
-  removeUser() {
-    console.log("Usuário removido: " + this.username + " " + this.email + " " + this.role);
-  }
 }

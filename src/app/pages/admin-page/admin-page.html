@@ -44,8 +44,8 @@
                         [id]="category.id"
                         [name]="category.name"
                         [quantity]="category.quantity"
-                        (edit)="popup_edit($event)"
-                        (delete)="popup_delete($event)"
+                        (edit)="popup(2); category_id = $event"
+                        (delete)="popup(3); category_id = $event"
                     ></app-category-informations>
                 }
 
@@ -82,6 +82,7 @@
                         [username]="user.username"
                         [email]="user.email"
                         [role]="user.role"
+                        (delete)="popup(5); user_id=$event"
                     ></app-user-information>
                 }
 
@@ -138,6 +139,19 @@
         <app-create-user
             (clicked)="popup(0)"
         ></app-create-user>
+
+    </div>
+
+}
+
+@if (popup_value === 5) {
+
+    <div class="popup">
+
+        <app-delete-user
+            [user_id]="user_id"
+            (clicked)="popup(0)"
+        ></app-delete-user>
 
     </div>
 
