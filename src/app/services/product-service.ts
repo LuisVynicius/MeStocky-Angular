@@ -4,7 +4,7 @@ import { Observable } from 'rxjs';
 import { ProductCreateShape, ProductUpdateShape, StockShape } from '../shape/productShape';
 import { apiURL } from '../configs/environment';
 import { getHeaderToken } from './get_headers';
-import { StockInformationShape } from '../shape/InformationShape';
+import { StockInformationShape } from '../shape/informationShape';
 
 @Injectable({
   providedIn: 'root',

@@ -3,7 +3,7 @@ import { Button } from '../../shared/button/button';
 import { FormInput } from '../../shared/form-input/form-input';
 import { FormsModule, NgForm } from '@angular/forms';
 import { CategoryService } from '../../../services/category-service';
-import { CategoryUpdateShape } from '../../../shape/CategoryShape';
+import { CategoryUpdateShape } from '../../../shape/categoryShape';
 
 @Component({
   selector: 'app-edit-category',

@@ -3,7 +3,7 @@ import { FormInput } from '../../shared/form-input/form-input';
 import { Button } from '../../shared/button/button';
 import { FormsModule, NgForm } from '@angular/forms';
 import { CategoryService } from '../../../services/category-service';
-import { CategoryCreateShape } from '../../../shape/CategoryShape';
+import { CategoryCreateShape } from '../../../shape/categoryShape';
 
 @Component({
   selector: 'app-create-category',

@@ -5,7 +5,7 @@ import { Product } from './product/product';
 import { SearchBar } from './search-bar/search-bar';
 import { CreateProduct } from './create-product/create-product';
 import { StockShape } from '../../shape/productShape';
-import { StockInformationShape } from '../../shape/InformationShape';
+import { StockInformationShape } from '../../shape/informationShape';
 import { OptionsShape } from '../../shape/generics';
 import { ProductService } from '../../services/product-service';
 import { FormsModule } from '@angular/forms';
@@ -77,7 +77,7 @@ export class StockPage implements OnInit {
       }
     });
 
-    this.reasonService.getAllReasons().subscribe({
+    this.reasonService.getAllReasonsAsOptions().subscribe({
       next: (success) => {
         this.reasons = success;
         this.cdr.markForCheck();
