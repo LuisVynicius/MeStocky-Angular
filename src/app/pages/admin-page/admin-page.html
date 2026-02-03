@@ -8,21 +8,15 @@
 
     <div class="container_background">
 
-        <div class="container_background_labels">
-
-            <h2>Usuários do Sistema</h2>
-
-            <span>Gerencie permissões e cargos</span>
-
-        </div>
-
         <div class="container_background_users">
 
             <div class="container_background_users_top">
 
-                <div class="container_background_users_top_label">
+                <div class="container_background_users_label">
 
                     <h2>Usuários</h2>
+
+                    <span>Gerencie os usuários</span>
 
                 </div>
 
@@ -33,11 +27,11 @@
                         (clicked)="popup(4)"
                     ></app-button>
 
-                </div>   
+                </div>
 
             </div>
 
-            <div class="container_background_users_itens">
+            <div class="container_background_users_items">
 
                 @for (user of users; track $index) {
                     <app-user-information
@@ -53,82 +47,88 @@
 
         </div>
 
-        <div class="container_background_reasons">
+        <div class="container_background_items">
 
-            <div class="container_background_reasons_top">
+            <div class="container_background_items_categories">
 
-               <div class="container_background_reasons_top_label">
+                <div class="container_background_items_categories_top">
 
-                    <h2>Motivos para alteração de quantidade</h2>
+                    <div class="container_background_items_categories_top_label">
+                        
+                        <h2>Categorias</h2>
+    
+                        <span>Gerencie as categorias</span>
 
-                </div>
+                    </div>
 
-                <div class="container_background_reasons_top_button">
+                    <div class="container_background_items_categories_top_button">
+                        
+                        <app-button
+                            label="Adicionar"
+                            (clicked)="popup(1)"
+                        ></app-button>
 
-                    <app-button
-                        label="Adicionar"
-                        (clicked)="popup(7)"
-                    ></app-button>
-
-                </div>
-
-            </div>
-
-            <div class="container_background_categories_itens">
-
-                @for (reason of reasons; track reason.id) {
-                    <app-reason-informations
-                        [id]="reason.id"
-                        [name]="reason.name"
-                        (edit)="popup(8); reason_id = $event"
-                        (delete)="popup(9); reason_id = $event"
-                    ></app-reason-informations>
-                }
-
-            </div>
-
-        </div>
-
-        <div class="container_background_categories">
-
-            <div class="container_background_categories_top">
-
-                <div class="container_background_categories_top_label">
-
-                    <h2>Categorias</h2>
+                    </div>
 
                 </div>
 
-                <div class="container_background_categories_top_button">
+                <div class="container_background_items_categories_items">
 
-                    <app-button
-                        label="Adicionar"
-                        (clicked)="popup(1)"
-                    ></app-button>
+                    @for (category of categories; track category.id) {
+                        <app-category-informations
+                            [id]="category.id"
+                            [name]="category.name"
+                            [quantity]="category.quantity"
+                            (edit)="popup(2); category_id = $event"
+                            (delete)="popup(3); category_id = $event"
+                        ></app-category-informations>
+                    }
 
                 </div>
 
             </div>
 
-            <div class="container_background_categories_itens">
+            <div class="container_background_items_reasons">
 
-                @for (category of categories; track category.id) {
-                    <app-category-informations
-                        [id]="category.id"
-                        [name]="category.name"
-                        [quantity]="category.quantity"
-                        (edit)="popup(2); category_id = $event"
-                        (delete)="popup(3); category_id = $event"
-                    ></app-category-informations>
-                }
+                <div class="container_background_items_reasons_top">
+
+                    <div class="container_background_items_reasons_top_label">
+                        
+                        <h2>Motivos</h2>
+    
+                        <span>Gerencie os Motivos</span>
+
+                    </div>
+
+                    <div class="container_background_items_reasons_top_button">
+                        
+                        <app-button
+                            label="Adicionar"
+                            (clicked)="popup(7)"
+                        ></app-button>
+
+                    </div>
+
+                </div>
+
+                <div class="container_background_items_reasons_itens">
+
+                    @for (reason of reasons; track reason.id) {
+                        <app-reason-informations
+                            [id]="reason.id"
+                            [name]="reason.name"
+                            (edit)="popup(8); reason_id = $event"
+                            (delete)="popup(9); reason_id = $event"
+                        ></app-reason-informations>
+                    }
+
+                </div>
 
             </div>
 
         </div>
 
     </div>
-
-</div>
 
 @if (popup_value === 1) {
 
