@@ -3,24 +3,24 @@
     <form
         class="container_form"
         #EditForm="ngForm"
-        (ngSubmit)="editCategory(EditForm)"
+        (ngSubmit)="editReason(EditForm)"
     >
 
         <div class="container_form_title">
 
-            <span>Editar Categoria</span>
+            <span>Editar Motivo</span>
 
         </div>
 
         <div class="container_form_inputs">
 
             <app-form-input
-                title="Novo nome da Categoria"
+                title="Novo nome do Motivo"
             >
                 <input
                     type="text"
                     name="name"
-                    placeholder="Novo nome da Categoria"
+                    placeholder="Novo nome do Motivo"
                     ngModel
                     required
                 >
@@ -38,7 +38,7 @@
             ></app-button>
 
             <app-button
-                label="Atualizar categoria"
+                label="Atualizar Motivo"
                 type="submit"
             ></app-button>
 

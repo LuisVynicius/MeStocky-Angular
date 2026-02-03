@@ -6,3 +6,8 @@ export type ReasonShape = {
 export type ReasonCreateShape = {
     name: string
 }
+
+export type ReasonUpdateShape = {
+    id: number,
+    name: string
+}

@@ -4,7 +4,7 @@ import { Observable } from 'rxjs';
 import { OptionsShape } from '../shape/generics';
 import { getHeaderToken } from './get_headers';
 import { apiURL } from '../configs/environment';
-import { ReasonCreateShape, ReasonShape } from '../shape/reasonShape';
+import { ReasonCreateShape, ReasonShape, ReasonUpdateShape } from '../shape/reasonShape';
 
 @Injectable({
   providedIn: 'root',
@@ -36,6 +36,14 @@ export class ReasonService {
     const headers = getHeaderToken();
 
     return this.http.post<void>(apiURL + "/reason", reason, { headers} );
+
+  }
+
+  updateReason(reason: ReasonUpdateShape): Observable<void> {
+  
+    const headers = getHeaderToken();
+
+    return this.http.put<void>(apiURL + "/reason", reason, { headers} );
 
   }
 

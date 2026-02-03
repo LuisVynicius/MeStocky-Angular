@@ -16,6 +16,7 @@ import { ReasonService } from '../../services/reason-service';
 import { ReasonShape } from '../../shape/reasonShape';
 import { ReasonInformations } from './reason-informations/reason-informations';
 import { CreateReason } from './create-reason/create-reason';
+import { EditReason } from './edit-reason/edit-reason';
 
 @Component({
   selector: 'app-admin-page',
@@ -32,6 +33,8 @@ import { CreateReason } from './create-reason/create-reason';
     CreateReason,
     
     EditCategory,
+    EditReason,
+
     DeleteCategory,
     DeleteUser
   ],
@@ -75,7 +78,6 @@ export class AdminPage implements OnInit {
     this.reasonService.getAllReasons().subscribe({
       next: (success) => {
         this.reasons = success;
-        console.log(this.reasons);
         this.cdr.markForCheck();
       }
     });

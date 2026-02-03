@@ -197,9 +197,22 @@
 
     <div class="popup">
 
-        <app-create-reason>
+        <app-create-reason
             (clicked)="popup(0)"
         ></app-create-reason>
+
+    </div>
+
+}
+
+@if (popup_value === 8) {
+
+    <div class="popup">
+
+        <app-edit-reason
+            [reason_id]="reason_id"
+            (clicked)="popup(0)"
+        ></app-edit-reason>
 
     </div>
 
