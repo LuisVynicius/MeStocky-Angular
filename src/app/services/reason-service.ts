@@ -47,4 +47,12 @@ export class ReasonService {
 
   }
 
+  deleteReason(id: number): Observable<void> {
+
+    const headers = getHeaderToken();
+
+    return this.http.delete<void>(apiURL + "/reason/" + id, { headers });
+
+  }
+
 }

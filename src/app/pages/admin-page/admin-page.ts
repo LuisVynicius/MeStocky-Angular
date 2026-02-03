@@ -17,6 +17,7 @@ import { ReasonShape } from '../../shape/reasonShape';
 import { ReasonInformations } from './reason-informations/reason-informations';
 import { CreateReason } from './create-reason/create-reason';
 import { EditReason } from './edit-reason/edit-reason';
+import { DeleteReason } from './delete-reason/delete-reason';
 
 @Component({
   selector: 'app-admin-page',
@@ -36,7 +37,8 @@ import { EditReason } from './edit-reason/edit-reason';
     EditReason,
 
     DeleteCategory,
-    DeleteUser
+    DeleteUser,
+    DeleteReason
   ],
   templateUrl: './admin-page.html',
   styleUrl: './admin-page.css',

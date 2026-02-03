@@ -217,3 +217,16 @@
     </div>
 
 }
+
+@if (popup_value === 9) {
+
+    <div class="popup">
+
+        <app-delete-reason
+            [reason_id]="reason_id"
+            (clicked)="popup(0)"
+        ></app-delete-reason>
+
+    </div>
+
+}
