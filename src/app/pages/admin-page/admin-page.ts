@@ -15,6 +15,7 @@ import { DeleteUser } from './delete-user/delete-user';
 import { ReasonService } from '../../services/reason-service';
 import { ReasonShape } from '../../shape/reasonShape';
 import { ReasonInformations } from './reason-informations/reason-informations';
+import { CreateReason } from './create-reason/create-reason';
 
 @Component({
   selector: 'app-admin-page',
@@ -28,6 +29,8 @@ import { ReasonInformations } from './reason-informations/reason-informations';
     
     CreateCategory,
     CreateUser,
+    CreateReason,
+    
     EditCategory,
     DeleteCategory,
     DeleteUser

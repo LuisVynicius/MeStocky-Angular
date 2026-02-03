@@ -3,24 +3,24 @@
     <form
         class="container_form"
         #InsertForm="ngForm"
-        (ngSubmit)="insertCategory(InsertForm)"
+        (ngSubmit)="insertReason(InsertForm)"
     >
 
         <div class="container_form_title">
 
-            <span>Adicionar Categoria</span>
+            <span>Adicionar Motivo</span>
 
         </div>
 
         <div class="container_form_inputs">
 
             <app-form-input
-                title="Nome da Categoria"
+                title="Nome do Motivo"
             >
                 <input
                     type="text"
                     name="name"
-                    placeholder="Nome da Categoria"
+                    placeholder="Nome do Motivo"
                     ngModel
                     required
                 >
@@ -38,7 +38,7 @@
             ></app-button>
 
             <app-button
-                label="Criar Categoria"
+                label="Criar Motivo"
                 type="submit"
             ></app-button>
 
