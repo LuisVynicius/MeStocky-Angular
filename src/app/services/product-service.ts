@@ -22,6 +22,14 @@ export class ProductService {
     return this.http.get<StockShape[]>(apiURL + "/product", { headers } );
 
   }
+
+  getInformations(): Observable<StockInformationShape> {
+
+    const headers = getHeaderToken();
+
+    return this.http.get<StockInformationShape>(apiURL + "/product/informations", { headers });
+
+  }
   
   createProduct(product: ProductCreateShape): Observable<void> {
 
@@ -39,11 +47,11 @@ export class ProductService {
 
   }
 
-  getInformations(): Observable<StockInformationShape> {
+  deleteProduct(id: number): Observable<void> {
 
     const headers = getHeaderToken();
 
-    return this.http.get<StockInformationShape>(apiURL + "/product/informations", { headers });
+    return this.http.delete<void>(apiURL + "/product/" + id, { headers });
 
   }
 
