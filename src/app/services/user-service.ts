@@ -21,11 +21,11 @@ export class UserService {
 
   }
 
-  validToken(): Observable<void> {
+  validToken(): Observable<ValidTokenShape> {
   
     const headers = getHeaderToken();
 
-    return this.http.get<void>(apiURL + "/login/valid", { headers });
+    return this.http.get<ValidTokenShape>(apiURL + "/login/valid", { headers });
 
   }
 
