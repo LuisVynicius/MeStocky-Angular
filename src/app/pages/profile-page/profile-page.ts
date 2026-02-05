@@ -5,6 +5,7 @@ import { FormsModule, NgForm } from '@angular/forms';
 import { UserService } from '../../services/user-service';
 import { MenuBar } from '../shared/menu-bar/menu-bar';
 import { Router } from '@angular/router';
+import { UserCredentialsShape, UserInformationsShape } from '../../shape/userShape';
 
 @Component({
   selector: 'app-profile-page',
@@ -25,7 +26,8 @@ export class ProfilePage {
   ) { }
 
   updateInformations(form: NgForm) {
-    const user = form.value;
+
+    const user: UserInformationsShape = form.value;
 
     this.userService.updateUserInformations(user).subscribe({
       next: (success) => {
@@ -33,9 +35,22 @@ export class ProfilePage {
         this.router.navigate(["/login"]);
       }
     })
+
   }
 
-  saveCredentials(form: NgForm) {
-    console.log(form.value);
+  updateCredentials(form: NgForm) {
+
+    const user: UserCredentialsShape = form.value;
+
+    this.userService.updateUserCredentials(user).subscribe({
+      next: (success) => {
+        alert("Senha alterada");
+      },
+      error: (error) => {
+        alert("Senha antiga está errada");
+      }
+    });
+
   }
+
 }

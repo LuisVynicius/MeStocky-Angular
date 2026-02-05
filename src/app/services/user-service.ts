@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { LoginShape, TokenShape, UserAdminShape, UserCreateShape, UserCredentialsShape, ValidTokenShape } from '../shape/userShape';
+import { LoginShape, TokenShape, UserAdminShape, UserCreateShape, UserCredentialsShape, UserInformationsShape, ValidTokenShape } from '../shape/userShape';
 import { HttpClient } from '@angular/common/http';
 import { apiURL } from '../configs/environment';
 import { AuthenticationShape } from '../shape/generics';
@@ -45,11 +45,19 @@ export class UserService {
       
   }
 
-  updateUserInformations(user: UserCredentialsShape): Observable<void> {
+  updateUserInformations(user: UserInformationsShape): Observable<void> {
 
     const headers = getHeaderToken();
 
     return this.http.put<void>(apiURL + "/user/informations", user, { headers });
+
+  }
+
+  updateUserCredentials(user: UserCredentialsShape): Observable<void> {
+
+    const headers = getHeaderToken();
+
+    return this.http.put<void>(apiURL + "/user/credentials", user, { headers });
 
   }
 

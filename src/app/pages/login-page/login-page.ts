@@ -28,18 +28,21 @@ export class LoginPage implements OnInit {
   
   ngOnInit(): void {
 
-    // const token = localStorage.getItem("token");
+    const token = localStorage.getItem("token");
     
-    // if (token !== null) {
-    //     this.userService.validToken(localStorage.getItem("token") || "").subscribe({
-    //       next: (success) => {
-    //         this.router.navigate(["/stock"]);
-    //       },
-    //       error: (error) => {
-    //         localStorage.clear();
-    //       }
-    //     });
-    // }
+    if (token === null) {
+      localStorage.clear();
+    }
+    
+    this.userService.validToken().subscribe({
+      next: (success) => {
+        this.router.navigate(["/stock"]);
+      },
+      error: (error) => {
+        localStorage.clear();
+      }
+      }
+    );
 
   }
 

@@ -66,7 +66,7 @@
         <form
             class="container_background_password"
             #credentialsForm="ngForm"
-            (ngSubmit)="saveCredentials(credentialsForm)"
+            (ngSubmit)="updateCredentials(credentialsForm)"
         >
 
             <h2>Segurança</h2>
@@ -78,7 +78,7 @@
                 >
                     <input
                         type="password"
-                        name="current_password"
+                        name="old_password"
                         placeholder="Senha atual"
                         ngModel
                         required
