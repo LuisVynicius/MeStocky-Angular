@@ -23,7 +23,6 @@ export type StockShape = {
 
 export type ProductCreateShape = {
     name: string,
-    quantity: number,
     min_quantity: number,
     category_id: number
 }
