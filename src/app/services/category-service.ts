@@ -5,7 +5,6 @@ import { getHeaderToken } from './get_headers';
 import { HttpClient } from '@angular/common/http';
 import { apiURL } from '../configs/environment';
 import { CategoryCreateShape, CategoryShape, CategoryUpdateShape } from '../shape/categoryShape';
-import { CreateCategory } from '../pages/admin-page/create-category/create-category';
 
 @Injectable({
   providedIn: 'root',
@@ -16,43 +15,43 @@ export class CategoryService {
     private http: HttpClient
   ) { }
 
-  getAllCategories(): Observable<OptionsShape[]> {
+  getAllCategories(): Observable<OptionsShape[] | string> {
 
     const headers = getHeaderToken();
 
-    return this.http.get<OptionsShape[]>(apiURL + "/category", { headers });
+    return this.http.get<OptionsShape[] | string>(apiURL + "/category", { headers });
 
   }
 
-  getAllCategoriesAdmin(): Observable<CategoryShape[]> {
+  getAllCategoriesAdmin(): Observable<CategoryShape[] | string> {
 
     const headers = getHeaderToken();
 
-    return this.http.get<CategoryShape[]>(apiURL + "/category/admin", { headers });
+    return this.http.get<CategoryShape[] | string>(apiURL + "/category/admin", { headers });
 
   }
 
-  createCategory(category: CategoryCreateShape): Observable<void> {
+  createCategory(category: CategoryCreateShape): Observable<void | string> {
 
     const headers = getHeaderToken();
 
-    return this.http.post<void>(apiURL + "/category", category, { headers });
+    return this.http.post<void | string>(apiURL + "/category", category, { headers });
 
   }
 
-  updateCategory(category: CategoryUpdateShape): Observable<void> {
+  updateCategory(category: CategoryUpdateShape): Observable<void | string> {
 
     const headers = getHeaderToken();
 
-    return this.http.put<void>(apiURL + "/category", category, { headers });
+    return this.http.put<void | string>(apiURL + "/category", category, { headers });
 
   }
 
-  deleteCategory(id: number): Observable<void> {
+  deleteCategory(id: number): Observable<void | string> {
 
     const headers = getHeaderToken();
 
-    return this.http.delete<void>(apiURL + "/category/" + id, { headers });
+    return this.http.delete<void | string>(apiURL + "/category/" + id, { headers });
 
   }
 

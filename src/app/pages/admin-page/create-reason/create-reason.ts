@@ -37,9 +37,6 @@ export class CreateReason {
       this.reasonService.createReason(reason).subscribe({
             next: (success) => {
               window.location.reload();
-            },
-            error: (err) => {
-              console.log("erro")
             }
         });
 

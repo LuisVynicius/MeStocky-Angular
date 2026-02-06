@@ -15,57 +15,57 @@ export class UserService {
     private http: HttpClient
   ) { }
 
-  login(loginShape: LoginShape): Observable<AuthenticationShape> {
+  login(loginShape: LoginShape): Observable<AuthenticationShape | string> {
   
-    return this.http.post<AuthenticationShape>(apiURL + "/login", loginShape);
+    return this.http.post<AuthenticationShape | string>(apiURL + "/login", loginShape);
 
   }
 
-  validToken(): Observable<ValidTokenShape> {
+  validToken(): Observable<ValidTokenShape | string> {
   
     const headers = getHeaderToken();
 
-    return this.http.get<ValidTokenShape>(apiURL + "/login/valid", { headers });
+    return this.http.get<ValidTokenShape | string>(apiURL + "/login/valid", { headers });
 
   }
 
-  getAllUsersForAdmin(): Observable<UserAdminShape[]> {
+  getAllUsersForAdmin(): Observable<UserAdminShape[] | string> {
 
     const headers = getHeaderToken();
 
-    return this.http.get<UserAdminShape[]>(apiURL + "/user", { headers });
+    return this.http.get<UserAdminShape[] | string>(apiURL + "/user", { headers });
 
   }
 
-  createUser(user: UserCreateShape): Observable<void> {
+  createUser(user: UserCreateShape): Observable<void | string> {
 
     const headers = getHeaderToken();
 
-    return this.http.post<void>(apiURL + "/user", user, { headers });
+    return this.http.post<void | string>(apiURL + "/user", user, { headers });
       
   }
 
-  updateUserInformations(user: UserInformationsShape): Observable<void> {
+  updateUserInformations(user: UserInformationsShape): Observable<void | string> {
 
     const headers = getHeaderToken();
 
-    return this.http.put<void>(apiURL + "/user/informations", user, { headers });
+    return this.http.put<void | string>(apiURL + "/user/informations", user, { headers });
 
   }
 
-  updateUserCredentials(user: UserCredentialsShape): Observable<void> {
+  updateUserCredentials(user: UserCredentialsShape): Observable<void | string> {
 
     const headers = getHeaderToken();
 
-    return this.http.put<void>(apiURL + "/user/credentials", user, { headers });
+    return this.http.put<void | string>(apiURL + "/user/credentials", user, { headers });
 
   }
 
-  deleteUser(id: number): Observable<void> {
+  deleteUser(id: number): Observable<void | string> {
     
     const headers = getHeaderToken();
 
-    return this.http.delete<void>(apiURL + "/user/" + id, { headers })
+    return this.http.delete<void | string>(apiURL + "/user/" + id, { headers })
 
   }
 

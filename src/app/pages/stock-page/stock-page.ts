@@ -58,28 +58,28 @@ export class StockPage implements OnInit {
   ngOnInit(): void {
     this.productService.getAllProducts().subscribe({
       next: (success) => {
-        this.products = success;
+        this.products = success as StockShape[];
         this.cdr.markForCheck();
       } 
     });
 
     this.categoryService.getAllCategories().subscribe({
       next: (success) => {
-        this.categories = success;
+        this.categories = success as OptionsShape[];
         this.cdr.markForCheck();
       }
     });
     
     this.productService.getInformations().subscribe({
       next: (success) => {
-        this.informations = success;
+        this.informations = success as StockInformationShape;
         this.cdr.markForCheck();
       }
     });
 
     this.reasonService.getAllReasonsAsOptions().subscribe({
       next: (success) => {
-        this.reasons = success;
+        this.reasons = success as OptionsShape[];
         this.cdr.markForCheck();
       }
     });

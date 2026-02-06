@@ -17,7 +17,14 @@ export const authGuard: CanActivateFn = () => {
   }
   
   return service.validToken().pipe(
-    map((response: ValidTokenShape) => {
+    map((response: ValidTokenShape | string) => {
+
+      if (typeof response === 'string') {
+        localStorage.clear();
+        router.navigate(['/login']);
+        return false;
+      }
+
       if (response.valided) {
         return true;
       } else {

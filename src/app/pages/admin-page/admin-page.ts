@@ -65,21 +65,21 @@ export class AdminPage implements OnInit {
 
     this.userService.getAllUsersForAdmin().subscribe({
       next: (success) => {
-        this.users = success;
+        this.users = success as UserAdminShape[];
         this.cdr.markForCheck();
       }
     });
 
     this.categoryService.getAllCategoriesAdmin().subscribe({
       next: (success) => {
-        this.categories = success;
+        this.categories = success as CategoryShape[];
         this.cdr.markForCheck();
       }
     });
 
     this.reasonService.getAllReasons().subscribe({
       next: (success) => {
-        this.reasons = success;
+        this.reasons = success as ReasonShape[];
         this.cdr.markForCheck();
       }
     });

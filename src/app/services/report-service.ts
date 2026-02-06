@@ -14,19 +14,19 @@ export class ReportService {
     private http: HttpClient
   ) { }
 
-  getAllReports(): Observable<ReportShape[]> {
+  getAllReports(): Observable<ReportShape[] | string> {
 
     const headers = getHeaderToken();
 
-    return this.http.get<ReportShape[]>(apiURL + "/report", { headers } );
+    return this.http.get<ReportShape[] | string>(apiURL + "/report", { headers } );
 
   }
 
-  changeProductQuantity(change: ProductChangeShape): Observable<string> {
+  changeProductQuantity(change: ProductChangeShape): Observable<void | string> {
 
     const headers = getHeaderToken();
 
-    return this.http.put(apiURL + "/product/quantity", change, { headers, responseType: "text" });
+    return this.http.put<void | string>(apiURL + "/product/quantity", change, { headers });
 
   }
 

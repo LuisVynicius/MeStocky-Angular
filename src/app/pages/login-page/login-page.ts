@@ -6,6 +6,7 @@ import { LoginShape, TokenShape } from '../../shape/userShape';
 import { UserService } from '../../services/user-service';
 import { Router } from '@angular/router';
 import { MenuBar } from '../shared/menu-bar/menu-bar';
+import { AuthenticationShape } from '../../shape/generics';
 
 @Component({
   selector: 'app-login-page',
@@ -52,10 +53,11 @@ export class LoginPage implements OnInit {
 
     this.userService.login(login).subscribe({
       next: (success) => {
-        localStorage.setItem("token", success.token);
-        localStorage.setItem("user_role", String(success.role));
-        localStorage.setItem("username", success.username);
-        localStorage.setItem("rolename", success.rolename);
+        const authentication = success as AuthenticationShape
+        localStorage.setItem("token", authentication.token);
+        localStorage.setItem("user_role", String(authentication.role));
+        localStorage.setItem("username", authentication.username);
+        localStorage.setItem("rolename", authentication.rolename);
 
         this.router.navigate(["/stock"]);
       },

@@ -15,43 +15,43 @@ export class ReasonService {
     private http: HttpClient
   ) { }
 
-  getAllReasonsAsOptions(): Observable<OptionsShape[]> {
+  getAllReasonsAsOptions(): Observable<OptionsShape[] | string> {
 
     const headers = getHeaderToken();
 
-    return this.http.get<OptionsShape[]>(apiURL + "/reason", { headers } );
+    return this.http.get<OptionsShape[] | string>(apiURL + "/reason", { headers } );
 
   }
 
-  getAllReasons(): Observable<ReasonShape[]> {
+  getAllReasons(): Observable<ReasonShape[] | string> {
 
     const headers = getHeaderToken();
 
-    return this.http.get<ReasonShape[]>(apiURL + "/reason", { headers } );
+    return this.http.get<ReasonShape[] | string>(apiURL + "/reason", { headers } );
 
   }
 
-  createReason(reason: ReasonCreateShape): Observable<void> {
+  createReason(reason: ReasonCreateShape): Observable<void | string> {
   
     const headers = getHeaderToken();
 
-    return this.http.post<void>(apiURL + "/reason", reason, { headers} );
+    return this.http.post<void | string>(apiURL + "/reason", reason, { headers} );
 
   }
 
-  updateReason(reason: ReasonUpdateShape): Observable<void> {
+  updateReason(reason: ReasonUpdateShape): Observable<void | string> {
   
     const headers = getHeaderToken();
 
-    return this.http.put<void>(apiURL + "/reason", reason, { headers} );
+    return this.http.put<void | string>(apiURL + "/reason", reason, { headers} );
 
   }
 
-  deleteReason(id: number): Observable<void> {
+  deleteReason(id: number): Observable<void | string> {
 
     const headers = getHeaderToken();
 
-    return this.http.delete<void>(apiURL + "/reason/" + id, { headers });
+    return this.http.delete<void | string>(apiURL + "/reason/" + id, { headers });
 
   }
 

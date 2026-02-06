@@ -26,7 +26,7 @@ export class ReportPage implements OnInit {
     
     this.reportService.getAllReports().subscribe({
       next: (success) => {
-        this.reports = success;
+        this.reports = success as ReportShape[];
         this.cdr.markForCheck();
       }
     });
