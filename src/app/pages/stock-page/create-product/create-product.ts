@@ -43,7 +43,7 @@ export class CreateProduct {
         window.location.reload();
       },
       error: (error) => {
-        console.log("TODO ERROR");
+        alert(error.error);
       }
     });
   }

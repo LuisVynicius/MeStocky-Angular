@@ -42,8 +42,7 @@ export class LoginPage implements OnInit {
       error: (error) => {
         localStorage.clear();
       }
-      }
-    );
+    });
 
   }
 
@@ -61,8 +60,8 @@ export class LoginPage implements OnInit {
 
         this.router.navigate(["/stock"]);
       },
-      error: (err) => {
-        console.error(err);
+      error: (error) => {
+        alert(error.error)
       }
     });
   }

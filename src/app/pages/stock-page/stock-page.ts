@@ -60,13 +60,19 @@ export class StockPage implements OnInit {
       next: (success) => {
         this.products = success as StockShape[];
         this.cdr.markForCheck();
-      } 
+      },
+      error: (error) => {
+        alert("Erro interno");
+      }
     });
 
     this.categoryService.getAllCategories().subscribe({
       next: (success) => {
         this.categories = success as OptionsShape[];
         this.cdr.markForCheck();
+      },
+      error: (error) => {
+        alert("Erro interno");
       }
     });
     
@@ -74,6 +80,9 @@ export class StockPage implements OnInit {
       next: (success) => {
         this.informations = success as StockInformationShape;
         this.cdr.markForCheck();
+      },
+      error: (error) => {
+        alert("Erro interno");
       }
     });
 
@@ -81,6 +90,9 @@ export class StockPage implements OnInit {
       next: (success) => {
         this.reasons = success as OptionsShape[];
         this.cdr.markForCheck();
+      },
+      error: (error) => {
+        alert("Erro interno");
       }
     });
 

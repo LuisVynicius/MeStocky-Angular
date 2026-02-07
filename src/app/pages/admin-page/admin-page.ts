@@ -67,6 +67,9 @@ export class AdminPage implements OnInit {
       next: (success) => {
         this.users = success as UserAdminShape[];
         this.cdr.markForCheck();
+      },
+      error: (error) => {
+        alert("Erro interno");
       }
     });
 
@@ -74,6 +77,9 @@ export class AdminPage implements OnInit {
       next: (success) => {
         this.categories = success as CategoryShape[];
         this.cdr.markForCheck();
+      },
+      error: (error) => {
+        alert("Erro interno");
       }
     });
 
@@ -81,6 +87,9 @@ export class AdminPage implements OnInit {
       next: (success) => {
         this.reasons = success as ReasonShape[];
         this.cdr.markForCheck();
+      },
+      error: (error) => {
+        alert("Erro interno");
       }
     });
 

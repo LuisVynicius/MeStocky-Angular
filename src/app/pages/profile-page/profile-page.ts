@@ -33,6 +33,9 @@ export class ProfilePage {
       next: (success) => {
         localStorage.clear();
         this.router.navigate(["/login"]);
+      },
+      error: (error) => {
+        alert(error.error)
       }
     })
 
@@ -47,7 +50,7 @@ export class ProfilePage {
         alert("Senha alterada");
       },
       error: (error) => {
-        alert("Senha antiga está errada");
+        alert(error.error)
       }
     });
 

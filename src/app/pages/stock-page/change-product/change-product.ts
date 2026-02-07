@@ -47,6 +47,9 @@ export class ChangeProduct {
     this.reportService.changeProductQuantity(change).subscribe({
       next: (success) => {
         window.location.reload();
+      },
+      error: (error) => {
+        alert(error.error)
       }
     });
   }

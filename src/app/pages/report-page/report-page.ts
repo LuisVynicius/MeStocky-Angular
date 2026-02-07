@@ -28,6 +28,9 @@ export class ReportPage implements OnInit {
       next: (success) => {
         this.reports = success as ReportShape[];
         this.cdr.markForCheck();
+      },
+      error: (error) => {
+        alert("Erro interno");
       }
     });
 

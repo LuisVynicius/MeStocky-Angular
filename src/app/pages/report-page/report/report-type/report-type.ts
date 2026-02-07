@@ -16,7 +16,6 @@ export class ReportType {
   reason: string = "";
 
   get cssClass(): string {
-    console.log(this.reason_type);
     return this.reason_type ? "report-entry" : "report-exit";
   }
 }

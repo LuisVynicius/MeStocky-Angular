@@ -38,8 +38,8 @@ export class CreateCategory {
             next: (success) => {
               window.location.reload();
             },
-            error: (err) => {
-              console.log("erro")
+            error: (error) => {
+              alert(error.error)
             }
         });
       }

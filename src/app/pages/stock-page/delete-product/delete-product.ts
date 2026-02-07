@@ -33,7 +33,7 @@ export class DeleteProduct {
         window.location.reload();
       },
       error: (error) => {
-        alert("Erro")
+        alert(error.error)
       }
     })
 

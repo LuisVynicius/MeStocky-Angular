@@ -41,8 +41,8 @@ export class EditCategory {
       next: (success) => {
         window.location.reload();
       },
-      error: (err) => {
-        console.log(err)
+      error: (error) => {
+        alert(error.error)
       }
     })
   }

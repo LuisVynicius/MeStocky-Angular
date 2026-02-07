@@ -48,6 +48,9 @@ export class EditProduct {
     this.productService.updateProduct(product).subscribe({
       next: (success) => {
         window.location.reload();
+      },
+      error: (error) => {
+        alert(error.error)
       }
     })
     

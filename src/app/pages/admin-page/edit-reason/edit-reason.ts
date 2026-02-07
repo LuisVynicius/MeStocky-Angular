@@ -36,14 +36,12 @@ export class EditReason {
       name: form.value.name
     };
 
-    console.log(reason)
-
     this.reasonService.updateReason(reason).subscribe({
       next: (success) => {
         window.location.reload();
       },
-      error: (err) => {
-        console.log(err)
+      error: (error) => {
+        alert(error.error)
       }
     })
   }
