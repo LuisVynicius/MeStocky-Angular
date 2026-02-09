@@ -15,6 +15,7 @@ import { ChangeProduct } from './change-product/change-product';
 import { DeleteProduct } from './delete-product/delete-product';
 import { ReasonService } from '../../services/reason-service';
 import { MenuBar } from '../shared/menu-bar/menu-bar';
+import { ShowProduct } from './show-product/show-product';
 
 @Component({
   selector: 'app-stock-page',
@@ -27,6 +28,7 @@ import { MenuBar } from '../shared/menu-bar/menu-bar';
     EditProduct,
     ChangeProduct,
     DeleteProduct,
+    ShowProduct,
     FormsModule,
     MenuBar
 ],

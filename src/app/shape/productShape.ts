@@ -1,3 +1,11 @@
+export type ProductShape = {
+    name: string,
+    category: string,
+    quantity: number,
+    min_quantity: number,
+    description: string | null
+}
+
 export type ReportShape = {
     reason: string,
     date: string,

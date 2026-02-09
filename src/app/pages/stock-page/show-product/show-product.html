@@ -1,0 +1,33 @@
+<div class="container">
+
+    <div class="container_title">
+
+        <h2>{{product.name}}</h2>
+
+    </div>
+
+    <div class="container_informations">
+
+        <app-item
+            title="Categoria"
+            [value]="product.category"
+        ></app-item>
+
+        <app-item
+            title="Quantidade mínima"
+            [value]="product.min_quantity.toString()"
+        ></app-item>
+
+        <app-item
+            title="Quantidade"
+            [value]="product.quantity.toString()"
+        ></app-item>
+
+        <app-item
+            title="Descrição"
+            [value]="product.description || 'Produto sem descrição'"
+        ></app-item>
+
+    </div>
+
+</div>

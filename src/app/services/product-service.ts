@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { ProductCreateShape, ProductUpdateShape, StockShape } from '../shape/productShape';
+import { ProductCreateShape, ProductShape, ProductUpdateShape, StockShape } from '../shape/productShape';
 import { apiURL } from '../configs/environment';
 import { getHeaderToken } from './get_headers';
 import { StockInformationShape } from '../shape/informationShape';
@@ -20,6 +20,14 @@ export class ProductService {
     const headers = getHeaderToken();
 
     return this.http.get<StockShape[] | string>(apiURL + "/product", { headers } );
+
+  }
+
+  getProductById(id: number): Observable<ProductShape | string> {
+
+    const headers = getHeaderToken();
+
+    return this.http.get<ProductShape | string>(apiURL + "/product/" + id, { headers });
 
   }
 

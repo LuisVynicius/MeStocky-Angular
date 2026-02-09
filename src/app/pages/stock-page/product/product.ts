@@ -36,6 +36,9 @@ export class Product {
   @Output()
   delete = new EventEmitter<number>();
 
+  @Output()
+  information = new EventEmitter<number>();
+
   constructor() { }
 
   toEdit() {
@@ -48,6 +51,10 @@ export class Product {
 
   toDelete() {
     this.delete.emit(this.id);
+  }
+
+  toInformation() {
+    this.information.emit(this.id);
   }
 
   get warning(): boolean {
