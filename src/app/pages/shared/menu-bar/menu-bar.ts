@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, RouterLink, RouterModule } from "@angular/router";
 import { User } from './user/user';
+import { UserService } from '../../../services/user-service';
 
 @Component({
   selector: 'app-menu-bar',
@@ -19,10 +20,28 @@ export class MenuBar implements OnInit {
   rolename: string = "";
 
   constructor(
-    private router: Router
+    private router: Router,
+    private userService: UserService
   ) { }
 
   ngOnInit(): void {
+
+    const token = localStorage.getItem("token");
+    
+    if (token === null) {
+      localStorage.clear();
+      return;
+    }
+    
+    this.userService.validToken().subscribe({
+      next: (success) => {
+        this.router.navigate(["/stock"]);
+      },
+      error: (error) => {
+        localStorage.clear();
+        return;
+      }
+    });
 
     this.logged = localStorage.getItem("token") !== null;
     this.user_role = Number(localStorage.getItem("user_role")) || 0 ;
