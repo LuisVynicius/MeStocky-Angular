@@ -36,7 +36,8 @@ export class CreateUser {
       username: form.value.username,
       email: form.value.email,
       password: form.value.password,
-      role: Number(form.value.role)
+      role: Number(form.value.role),
+      phone: form.value.phone
     };
 
     this.userService.createUser(user).subscribe({

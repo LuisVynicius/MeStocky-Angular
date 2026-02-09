@@ -42,7 +42,8 @@ export class EditProduct {
       id: this.product_id,
       name: form.value.name,
       category_id: Number(form.value.category_id) || 0,
-      min_quantity: Number(form.value.min_quantity) || 0
+      min_quantity: Number(form.value.min_quantity) || 0,
+      description: form.value.description
     }
 
     this.productService.updateProduct(product).subscribe({

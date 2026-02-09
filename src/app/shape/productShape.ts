@@ -24,12 +24,14 @@ export type StockShape = {
 export type ProductCreateShape = {
     name: string,
     min_quantity: number,
-    category_id: number
+    category_id: number,
+    description: string
 }
 
 export type ProductUpdateShape = {
     id: number,
     name: string,
     min_quantity: number,
-    category_id: number
+    category_id: number,
+    description: string
 }

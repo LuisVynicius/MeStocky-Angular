@@ -20,12 +20,13 @@ export type UserAdminShape = {
 
 export type UserInformationsShape = {
     username: string,
-    email: string
+    email: string,
+    phone: string
 }
 
 export type UserCredentialsShape = {
     old_password: string,
-    new_password:string
+    new_password: string
 }
 
 export type UserPasswordShape = {
@@ -38,4 +39,5 @@ export type UserCreateShape = {
     password: string,
     email: string,
     role: number,
+    phone: string
 }
