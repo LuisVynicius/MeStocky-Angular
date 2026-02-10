@@ -2,7 +2,7 @@
 
     <div class="container_options">
 
-        @if (logged) {
+        @if (!loginPage) {
 
             <a [routerLink]="['/stock']">Estoque</a>
             <a [routerLink]="['/report']">Relatórios</a>
@@ -25,7 +25,7 @@
 
     <div class="container_profile">
 
-        @if (logged) {
+        @if (!loginPage) {
 
             <div class="container_profile_content">
 

@@ -49,6 +49,7 @@ export class ChangeProduct {
         window.location.reload();
       },
       error: (error) => {
+        console.log(error);
         alert(error.error)
       }
     });

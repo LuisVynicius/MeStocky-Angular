@@ -19,13 +19,13 @@
             </div>
 
             <div class="container_background_up_filter">
-                
-                <input type="date">
 
-                <select name="" id="">
-                    <option value="Todos">Todos</option>
-                    <option value="Entrada">Entrada</option>
-                    <option value="Saída">Saída</option>
+                <select
+                    [(ngModel)]="filter"
+                >
+                    <option value="all">Todos</option>
+                    <option value="true">Entrada</option>
+                    <option value="">Saída</option>
                 </select>
 
             </div>
@@ -34,7 +34,7 @@
 
         <div class="container_background_reports">
 
-            @for (report of reports; track $index) {
+            @for (report of filteredProducts; track $index) {
                 <app-report
                     [report]="report"
                 ></app-report>

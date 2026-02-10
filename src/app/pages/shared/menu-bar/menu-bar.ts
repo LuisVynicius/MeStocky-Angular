@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Router, RouterLink, RouterModule } from "@angular/router";
 import { User } from './user/user';
 import { UserService } from '../../../services/user-service';
@@ -14,7 +14,8 @@ import { UserService } from '../../../services/user-service';
   styleUrl: './menu-bar.css',
 })
 export class MenuBar implements OnInit {
-  logged: boolean = false;
+  @Input()
+  loginPage: boolean = false;
   user_role: number = 0;
   username: string = "";
   rolename: string = "";
@@ -35,7 +36,9 @@ export class MenuBar implements OnInit {
     
     this.userService.validToken().subscribe({
       next: (success) => {
-        this.router.navigate(["/stock"]);
+        this.user_role = Number(localStorage.getItem("user_role")) || 0 ;
+        this.username = localStorage.getItem("username") || "";
+        this.rolename = localStorage.getItem("rolename") || "";
       },
       error: (error) => {
         localStorage.clear();
@@ -43,10 +46,7 @@ export class MenuBar implements OnInit {
       }
     });
 
-    this.logged = localStorage.getItem("token") !== null;
-    this.user_role = Number(localStorage.getItem("user_role")) || 0 ;
-    this.username = localStorage.getItem("username") || "";
-    this.rolename = localStorage.getItem("rolename") || "";
+    
 
   }
 
