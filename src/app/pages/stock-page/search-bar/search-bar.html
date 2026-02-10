@@ -2,11 +2,12 @@
 
     <div class="container_inputs">
 
-        <input type="search" placeholder="Pesquisar produto">
-
-        <app-button
-            label="Pesquisar"
-        ></app-button>
+        <input
+            type="search"
+            placeholder="Pesquisar produto"
+            [value]="filter"
+            (input)="updateValue($event.target.value)"
+        >
 
     </div>
 

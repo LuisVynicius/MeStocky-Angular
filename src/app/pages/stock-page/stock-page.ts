@@ -40,6 +40,9 @@ export class StockPage implements OnInit {
   products: StockShape[] = [];
   reasons: OptionsShape[] = [];
   categories: OptionsShape[] = [];
+
+  filter: string = "";
+
   popup_value: number = 0;
   product_id: number = 0;
   user_role: number = 0;
@@ -108,6 +111,12 @@ export class StockPage implements OnInit {
     } else {
       this.popup_value = value;
     }
+  }
+  
+  get filteredProducts(): StockShape[] {
+    return this.products.filter(
+      product => product.name.toLowerCase().includes(this.filter)
+    );
   }
 
 }

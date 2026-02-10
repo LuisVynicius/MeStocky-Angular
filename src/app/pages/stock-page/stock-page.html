@@ -27,7 +27,9 @@
 
         <div class="container_background_options">
 
-            <app-search-bar></app-search-bar>
+            <app-search-bar
+                [(filter)]="filter"
+            ></app-search-bar>
 
             @if (user_role < 4) {
 
@@ -42,7 +44,7 @@
 
         <div class="container_background_products">
 
-            @for (product of products; track product.id) {
+            @for (product of filteredProducts; track product.id) {
                 <app-product
                     [id]="product.id"
                     [title]="product.name"
