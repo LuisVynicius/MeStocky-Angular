@@ -14,19 +14,27 @@
 
     <div class="container_type">
 
-        @if (user_role < 3) {
-            
-            <app-button
-                label="Editar"
-                (clicked)="toEdit()"
-            ></app-button>
+        <div class="container_type_edit">
 
-        }
-        
-        <app-report-type
-            [reason]="report.reason"
-            [reason_type]="report.change_type"
-        ></app-report-type>
+            @if (user_role < 3) {
+                
+                <app-button
+                    label="Editar"
+                    (clicked)="toEdit()"
+                ></app-button>
+    
+            }
+
+        </div>
+
+        <div class="container_type_reason">
+
+            <app-report-type
+                [reason]="report.reason"
+                [reason_type]="report.change_type"
+            ></app-report-type>
+
+        </div>
 
     </div>
 

@@ -36,10 +36,13 @@
     gap: 15px;
 }
 
+.container_type_reason {
+    width: 200px;
+}
+
 .container_quantity {
     display: flex;
     align-items: center;
     justify-content: center;
     width: 15%;
-    
 }
