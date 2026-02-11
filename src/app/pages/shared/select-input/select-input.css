@@ -31,4 +31,7 @@
 
     font-weight: bold;
     font-size: 12px;
+
+    width: fit-content;
+    max-width: 200px;
 }
