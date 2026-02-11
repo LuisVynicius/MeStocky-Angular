@@ -1,59 +1,61 @@
-# MeStocky
+# Mestocky
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.0.5.
+Mestocky is a locally operated inventory management system designed to give full control to the administrators responsible for its maintenance. It aims to support any type of inventory, offering practicality, security, and flexibility.
 
-## Development server
+## Login
+The first access to the system is done using the default credentials provided during installation. After logging in for the first time, it is recommended to change the password to ensure security.
 
-To start a local development server, run:
-
-```bash
-ng serve
 ```
-
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
-
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
+Email: admin@gmail.com
+Password: 123
 ```
+## Roles
+The system uses access levels to ensure organization and control:
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+- Administrator: Has full control over the system. Only one user can hold this role.
+- Manager: Can perform almost all system actions, except removing the administrator.
+- Operator: Can add, remove, edit, and view products, as well as access reports.
+- Viewer: Limited to viewing products and reports.
 
-```bash
-ng generate --help
-```
+## Pages
 
-## Building
+- /login: Authentication screen using email and password.
+- /stock: Main inventory page. Allows adding, editing, removing, and viewing products. Also displays low-stock alerts.
+- /admin: Restricted area for Administrators and Managers, dedicated to general system administration.
+- /profile: Page for updating basic information of the logged-in user.
+- /report: Page dedicated to reports of stock movements and quantity adjustments.
 
-To build the project run:
+## System Administration
 
-```bash
-ng build
-```
+Administrators and Managers have access to the /admin page, where they can manage:
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+- Users: Add/Remove and View.
+- Product categories: Add/Remove/View and Edit.
+- Reasons for product quantity adjustments: Add/Remove/View and Edit.
 
-## Running unit tests
+Adjustment reasons are defined by administrators and used to justify movements within the inventory.
 
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
+### Exemplos
 
-```bash
-ng test
-```
+- Reasons:
+  - Sale
+  - Defective product
+  - Refund
+  - Adjustment
+- Categories:
+  - Computers
+  - Fruits
+  - Materials
 
-## Running end-to-end tests
+## Information About Removing Reasons and Categories
+Removing Reasons and Categories depends directly on the entities that reference them. This prevents the system from ending up with broken references.
 
-For end-to-end (e2e) testing, run:
+To remove a Category, you must ensure no product is still linked to it. This can be done in two ways:
 
-```bash
-ng e2e
-```
+- Remove the products that use that category; or
+- Edit those products and assign another category before removal.
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+To remove a Reason, it must not be associated with any report. There are two ways to free a reason:
 
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+- Delete the product related to the reports, which also removes all reports linked to it; or
+- Change the reason in each report that still uses it, until no record references it anymore.
