@@ -1,0 +1,52 @@
+<div class="container">
+
+    <form
+        class="container_form"
+        #editForm="ngForm"
+        (ngSubmit)="editReason(editForm)"
+    >
+
+        <div class="container_form_title">
+
+            <span>Editar Motivo</span>
+
+        </div>
+
+        <div class="container_form_inputs">
+
+            <app-select-input
+                title="Novo motivo"
+            >
+                <select
+                    name="reason_id"
+                    ngModel
+                    required
+                >
+                    @for (option of options; track option.id) {
+                        <option [value]="option.id">{{option.name}}</option>
+                    }
+                </select>
+                
+            </app-select-input>
+
+        </div>
+
+        <div class="container_form_buttons">
+
+            <app-button
+                label="Cancelar"
+                type="button"
+                (clicked)="onClick()"
+                [color]="1"
+            ></app-button>
+
+            <app-button
+                label="Atualizar Motivo"
+                type="submit"
+            ></app-button>
+
+        </div>
+
+    </form>
+
+</div>

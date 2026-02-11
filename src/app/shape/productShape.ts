@@ -6,14 +6,6 @@ export type ProductShape = {
     description: string | null
 }
 
-export type ReportShape = {
-    reason: string,
-    date: string,
-    product: string,
-    quantity: number,
-    change_type: boolean
-}
-
 export type ProductChangeShape = {
     id: number,
     quantity: number,

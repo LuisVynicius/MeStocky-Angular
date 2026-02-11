@@ -37,6 +37,7 @@
             @for (report of filteredProducts; track $index) {
                 <app-report
                     [report]="report"
+                    (edit)="popup(1); report_id=$event"
                 ></app-report>
             }
 
@@ -45,3 +46,16 @@
     </div>
 
 </div>
+
+@if (popup_value === 1) {
+
+    <div class="popup">
+
+        <app-edit-report
+            [report_id]="report_id"
+            (clicked)="popup(0)"
+        ></app-edit-report>
+
+    </div>
+
+}

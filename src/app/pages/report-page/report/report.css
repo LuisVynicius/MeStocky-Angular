@@ -24,14 +24,16 @@
 .container_product {
     display: flex;
     align-items: center;
-    width: 50%;
+    width: 40%;
 }
 
 .container_type {
     display: flex;
+    flex-direction: row-reverse;
     align-items: center;
-    justify-content: center;
-    width: 15%;
+    width: fit-content;
+    
+    gap: 15px;
 }
 
 .container_quantity {
@@ -39,4 +41,5 @@
     align-items: center;
     justify-content: center;
     width: 15%;
+    
 }

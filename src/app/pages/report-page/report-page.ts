@@ -1,16 +1,18 @@
 import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { Report } from './report/report';
-import { ReportShape } from '../../shape/productShape';
 import { ReportService } from '../../services/report-service';
 import { MenuBar } from '../shared/menu-bar/menu-bar';
 import { FormsModule } from '@angular/forms';
+import { EditReport } from './edit-report/edit-report';
+import { ReportShape } from '../../shape/reportShape';
 
 @Component({
   selector: 'app-report-page',
   imports: [
     Report,
     MenuBar,
-    FormsModule
+    FormsModule,
+    EditReport
   ],
   templateUrl: './report-page.html',
   styleUrl: './report-page.css',
@@ -18,7 +20,9 @@ import { FormsModule } from '@angular/forms';
 export class ReportPage implements OnInit {
   
   reports: ReportShape[] = [];
-  filter: string = "";
+  filter: string = "all";
+  popup_value: number = 0;
+  report_id: number = 0;
 
   constructor(
     private reportService: ReportService,
@@ -36,6 +40,14 @@ export class ReportPage implements OnInit {
         alert("Erro interno");
       }
     });
+  }
+
+  popup(value: number) {
+    if (this.popup_value === value) {
+      this.popup_value = 0;
+    } else {
+      this.popup_value = value;
+    }
   }
 
   get filteredProducts(): ReportShape[] {
